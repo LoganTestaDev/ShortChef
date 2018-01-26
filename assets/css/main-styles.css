@@ -1,0 +1,977 @@
+
+/* Reset the styles */
+html, body, div, header, nav, footer, p, span, img, a, br, ul, li, ol, table, thead, tbody, th, tr, td, input, label, textarea, form, h1, h2, h3, h4, h5, h6 {
+
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+/* Additional Customizations for this website */
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link, a:visited {
+	color: #000000;
+}
+
+a:hover {
+	color: #df7401;
+}
+
+p, li {
+	line-height: 22.4px;
+}
+
+ol {
+	padding-left: 15px;
+}
+
+
+audio {
+	padding: 10px 0 10px 0;
+}
+
+
+
+/* Start of CSS for site. */
+
+header {
+	padding: 0 5px 0px 5px;
+	background-color: #778891;
+	background: linear-gradient(to right, #255976, #256f92, #255976);
+	color: #df7401;
+}
+
+header p {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Glass Antiqua', Arial, Helvetica, sans-serif;
+}
+
+
+footer {
+	padding: 5px;
+	background: #778891;
+	background: linear-gradient(to right, #255976, #256f92, #255976);
+}
+
+footer p {
+	text-align: center;
+}
+
+
+nav {
+	padding: 5px;
+	background-color: #df7401;
+	background: linear-gradient(#ff8800, #ff5500);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+
+}
+
+nav a {
+	display: inline;
+}
+	
+nav a {
+	font-size: 16px;
+}
+
+nav a:link, nav a:visited{	
+	color: #fefefe;
+}
+
+nav a:hover{
+	color: #000000;
+		text-shadow: none;
+		text-decoration: underline;
+}
+
+.dropdownArea .dropButton {
+	cursor: pointer;
+    border: none;
+	outline: none;
+	background-color: inherit;
+}
+
+.dropButton div {
+	width: 35px;
+	height: 5px;
+	margin-top: 6px;
+	background-color: #000000;
+}
+
+.dropdownElements {
+    display: none;
+}
+
+.dropdownElements a {
+   display: block;
+   padding-left: 10px;
+   padding-top: 10px;
+}
+
+.showDropdownContent {
+	display: block;
+}
+
+
+
+#desktopNav {
+display: none;
+}
+
+
+
+
+
+
+#bodyWrapper {
+	box-sizing: border-box;
+	min-width: 300px;
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#indexContentContainer {
+	width: 100%;
+	background-color: #ffffff;
+		box-sizing: border-box;
+
+}
+
+h1 a:link, h1 a:visited {
+	font-size: 32px;
+	font-weight: bold;
+	color: #df7401;
+	font-family: 'Glass Antiqua', Arial, Helvetica, sans-serif;
+	text-shadow: 1px 1px 2px #000000;
+}
+
+h2 {
+	color: #333333;
+	font-size: 28px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-shadow: 1px 1px 2px #eeeeee;
+}
+
+h3 {
+		color: #df7401;
+	font-size: 24px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+h2, h3 {
+
+	font-weight: bold;
+}
+
+
+
+
+
+h4 {
+    font-size: 22px;
+	padding: 5px 0 5px 0;
+
+}
+
+h1 sup {
+	font-size: 14px;
+}
+
+
+	
+
+
+#contentContainer {
+	width: 100%;
+
+	background-color: #ffffff;
+		box-sizing: border-box;
+padding: 10px;
+}
+
+
+
+
+
+
+.contactFormContainer {
+width: 100%;
+max-width: 600px;
+box-sizing: border-box;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+	padding: 12px;
+	 border: 1px solid #cccccc; 
+	border-radius: 5px;
+	background-color: #eeeeee;
+
+}
+
+.modalForm {
+	border: 0px;
+	background-color: #ffffff;
+}
+
+.contactFormContainer label {
+	font-weight: bold;
+}
+
+input[type=text], input[type=email], select, textarea {
+width: 100%;
+box-sizing: border-box;
+	 margin-top: 5px;
+	 margin-bottom: 15px; 
+	 resize: vertical;
+	 padding: 10px; 
+	 border: 1px solid #cccccc; 
+	 border-radius: 5px;
+		
+}
+
+
+
+input:focus, textarea:focus {
+	outline: none;
+	border: 1px solid #007700;
+	box-shadow: 0 0 5px 5px #007700; 	
+	transition: 0.5s;
+}
+
+textarea {	
+	height: 150px;
+}
+
+input[type=submit] {
+	background: linear-gradient(#009900, #006600);
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+
+input[type=submit]:hover, #subscribeButton:hover {
+	background: #bbccdd;
+}
+
+
+#shortChefGifContainer {
+	display: none;
+}
+
+#heroImageContainer {
+
+background-image: url("../images/short-chef-with-apple.jpg");
+height: 280px;
+background-position: center 30%;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+#heroImageContainer.alternateHero {
+	background-image: url("../images/404-short-chef-hero-image.png");
+	background-size: contain;
+    width: 40%; 
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#heroImageContainer h3 {
+	color: #000000;
+	text-align: center;
+}
+
+.contentRow {
+	width: 100%;
+
+}
+
+
+.content4 {
+
+	width: 100%;
+	padding: 10px;
+	/*border: 1px solid #000; */	
+	box-sizing: border-box;
+/*	background-color: #ccc; */
+
+}
+
+.content8 {
+	width: 100%;
+	padding: 10px;
+	/*border: 1px solid #000;	*/
+	box-sizing: border-box;
+	/*background-color: #999;*/
+}
+
+
+
+.content4 img{
+display: block;	
+	width: 100%;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*General Use Classes */
+.clearBoth {
+	clear: both;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.centerImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 0 10px 0;
+}
+
+/* End of General Positioning Classes */
+
+
+
+.newsImgDiv img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsTextDiv {
+	padding-top: 10px;
+}
+
+.newsTextDiv h4 {
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+
+#footerElements {
+ /* width: 270px;  
+/* height: 100px; */
+padding: 10px 0 10px 0; 
+	margin-left: auto;
+	margin-right: auto;
+display: flex;
+justify-content: center;
+}
+
+
+
+/* Start of modal styles */
+
+#subscribeButton {
+padding: 10px 15px 10px 15px;	
+font-size: 24px;
+border-radius: 10px;
+outline: none;
+border: none;
+background-color: #df7401;
+}
+
+
+
+#subscribeModal {
+	display: none;
+	background-color: #ffffff;
+
+	position: fixed;
+	z-index: 1;
+	top: 20px;
+	margin-left: 200px;
+
+	overflow: auto;
+	width: 800px;
+	box-sizing: border-box;
+	opacity: 0.99;
+	border: 2px solid black; 
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #000000;
+}
+
+#subscribeModal h3 {
+	text-align: center;
+	color: #000000;
+
+}
+
+.modalHeader {
+	
+	padding: 15px 10px 15px 10px;
+	background: linear-gradient(#009900, #006600);
+}
+
+.modalContent {
+	padding: 20px 10px 20px 10px;
+}
+
+.modalFooter {
+	
+padding: 15px 10px 55px 10px;
+	background: linear-gradient(#006600, #009900);
+}
+
+#closeModal {
+	float: right;
+	margin-top: -10px;
+}
+
+#closeModal span {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#closeModal span:hover {
+	color: #bbccdd;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+/* End of modal styles */
+
+
+
+#socialIcons {
+float: left;
+	padding-top: 10px;
+	width: 103px;
+	padding-left: 25px;
+
+}
+
+#socialIcons img {
+	border-radius: 5px;
+}
+
+#socialIcons img:hover, #subscribeButton:hover{
+	box-shadow: 0 0 5px 5px #fefefe;
+	transition: 0.5s;
+}
+#socialIcons div {
+	float: left;
+}
+
+#socialIcons div:nth-of-type(n+2){
+	padding-left: 25px;
+}
+
+
+#clientSideValidationFeedback{
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+
+#restaurantEatingGuide {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	max-width: 590px;
+	padding: 10px 0 10px 0;
+}
+
+#restaurantEatingGuide img {
+	width: 100%;
+	max-width: 590px;
+}
+
+
+.foodList {
+padding: 10px 0 0 20px;
+}
+
+.foodList li {
+	list-style-type: none;
+	background: url(../images/strawberry.png) no-repeat 0 0;
+	padding-top: 3px;
+	padding-bottom: 10px;
+	line-height: 27px;
+}
+
+.foodList li a {
+    font-size: 22px;
+	font-weight: bold;
+	padding-left: 40px;
+}
+
+.ingredientsList {
+	list-style-type: disc;
+	padding-left: 15px;
+}
+
+.ingredientsList li, .recipeDirections li {
+    padding-bottom: 6px;	
+}
+
+
+
+.supportingPhotoContainer {
+margin-left: auto;
+margin-right: auto;
+
+	width: 100%;
+	height: 100%;
+			
+	min-width: 150px;
+	max-width: 400px;
+	padding-top: 10px;
+	
+}
+
+.supportingPhotoContainer img {
+	
+	width: 100%;
+	height: 100%;
+	padding-bottom: 5px;
+
+}
+
+.genericList {
+	list-style-type: disc;
+	padding-left: 20px;
+}
+
+
+
+/* Mobile styles */
+
+#bodyWrapper{
+	width: 100%;
+}
+	
+	#titleContainer{
+padding-left: 85px;
+	}
+	
+h1 a:link, a:visited {
+	font-size: 32px;
+}
+	
+
+
+
+
+header{
+	min-height: 100px;
+}
+
+#logo {
+	float: left;
+	padding-top: 5px;
+    padding-right: 5px;
+
+}
+
+#logo img {
+	height: 90px;
+}
+
+
+	
+footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+footer p {
+	
+}
+	
+#subscribeModal {
+
+position: fixed;
+	z-index: 1;
+	top: 30px;
+
+	margin-left: 10%;
+	overflow: auto;
+	width: 80%;
+
+}	
+
+#heroImageContainer.alternateHero  {
+	width: 100%;
+}
+
+
+
+
+
+
+/* Tablet styles */
+@media only screen and (min-width: 500px){
+	
+	#bodyWrapper{
+		width: 100%;
+	}
+	
+
+	
+	h1 a:link, a:visited {
+		font-size: 56px;
+		/* text-shadow: 2px 1px #000000; */
+
+	}
+	
+	h1 sup {
+		font-size: 18px;
+	}
+	
+	#titleContainer{
+		padding-top: 40px;
+	    padding-left: 170px;
+	}
+	
+	header p {
+		font-size: 22px;
+		text-shadow: 1px 1px #000000;
+}
+	
+	
+	h2 {
+		font-size: 32px;
+		
+	}
+	
+	h3 {
+		font-size: 28px;
+	}
+	
+	#logo {
+	padding-top: 23px;
+	padding-left: 10px;
+}
+
+#logo img {
+	height: 150px;
+}
+	
+	header {
+	     height: 200px;
+		 padding-bottom: 0px;
+	}
+	
+
+#mobileNav {
+	display:none;
+}
+
+#desktopNav {
+	display: block;
+}
+	
+nav a {
+	padding-left: 9px;
+	
+}
+
+
+
+nav {
+	padding-top: 10px;
+	padding-bottom: 14px;
+	padding-left: 0px;
+}
+
+
+	
+	
+}
+
+/* Certain Tablet styles only take effect above a certain width. */
+@media only screen and (min-width: 700px){
+nav {
+
+}
+
+
+nav a {
+	padding-left: 25px;
+	text-shadow: 2px 1px #224455; 
+	font-size: 18px;
+}
+
+
+
+.newsImgDiv {
+	float: left;
+	max-width: 120px;
+	padding: 0 10px 5px 0;
+}
+
+.contentRow {
+	
+	width: 100%;
+	box-sizing: border-box;
+display: table;
+}
+
+
+.content4 {
+
+	width: 33.3%;
+	padding: 10px;
+		
+	box-sizing: border-box;
+
+display: table-cell;
+vertical-align: top;
+}
+
+
+.content8 {
+
+	width: 66.7%;
+	padding: 10px;
+	
+	box-sizing: border-box;
+
+	display: table-cell;
+	vertical-align: top;
+}
+
+.newsTextDiv h4 {
+	text-align: left;
+}
+
+.supportingPhotoContainer {
+	float: right;
+	padding: 10px 0 10px 10px;
+}
+
+.contentContainerSupporting {
+	min-height: 420px;
+}
+
+#heroImageContainer.alternateHero {
+	width: 350px;
+}
+
+}
+
+/*Desktop Styles */
+@media only screen and (min-width: 1199px){
+
+#bodyWrapper {
+	width: 1200px;
+}
+
+#indexContentContainer {
+	width: 1200px;
+
+}
+h1 a:link, a:visited {
+	font-size: 82px;
+}
+
+h1 sup {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 48px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+#logo {
+	padding-top: 35px;
+	padding-left: 80px;
+}
+
+#logo img {
+	height: 150px;
+}
+
+header {
+	height: 220px;
+    padding-bottom: 0px;
+}
+
+#titleContainer {
+	padding-top: 45px;
+	padding-left: 250px;
+}
+
+header p {
+	padding-top: 10px;
+
+		font-size: 36px;
+
+
+}
+
+nav {
+
+	padding-left: 70px;
+}
+
+nav a {
+	padding-left: 40px;
+	font-size: 20px;
+}
+
+
+#shortChefGifContainer {
+	display: block;
+    width: 230px;
+	height: 230px;
+    margin-top: 20px;
+	float: right;
+}
+
+
+#shortChefGifInnerContainer {
+    width: 225px;
+	height: 225px;
+}
+
+#shortChefGifContainer img {
+	width: 100%;
+height: 200px;
+}
+
+#shortChefGifContainer #logoGif {
+	display: none;
+}
+
+#heroImageContainer {
+	height: 400px;
+	
+	
+}
+
+.contentRow {
+	width: 1200px;
+
+}
+.content4 {
+
+	width: 400px;
+	
+}
+
+.content8 {
+	width: 800px;
+}
+
+#subscribeModal {
+position: fixed;
+	z-index: 1;
+	top: 100px;
+	margin-left: 200px;
+	
+	overflow: auto;
+	width: 800px;
+
+}
+
+#heroImageContainer.alternateHero {
+	width: 400px;
+}
+
+
+
+#eyeContainer {
+	position: relative;
+	width: 140px;
+	height: 200px;
+	left: 688px; 
+	top: 157px;
+}
+
+#avocado {
+    position: relative;
+	left: 0px;
+	top: 0px;
+	width: 140px;
+	height: 200px;
+	border-radius: 40px 40px 50px 50px;
+	background-image: url("../images/googleAssets/avo-eyeless.png");
+	background-size: cover;
+	background-position: center center;
+	z-index: 10;
+}
+
+#centerMarker {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	left: 65px; 
+	top: 100px; 
+	visibility: hidden; 
+	background-color: #0000ff;
+	z-index:20;
+}
+
+
+#eye1, #eye2 {
+	position: absolute;
+	width: 40px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	z-index: 8;
+}
+
+#eye1 {
+	left: 25px;
+	top: 80px;
+}
+
+#eye2 {
+	left: 75px;
+	top: 80px;
+}
+
+#pupil1, #pupil2 {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-image: url("../images/googleAssets/pupil.png");
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+    z-index: 9;
+}
+
+
+
+
+
+
+}
+
