@@ -106,13 +106,13 @@ Across America, whose mission is, like Newlands, to promote healthy eating and f
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
 <h3>Subscribe!</h3>
 </div>
 <div class="modalContent">
-
 <p>Want frequent new menu ideas and healthy eating tips and recipes?  Join our mailing list!</p>
 
 <div class="contactFormContainer modalForm">
@@ -136,6 +136,8 @@ Across America, whose mission is, like Newlands, to promote healthy eating and f
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 

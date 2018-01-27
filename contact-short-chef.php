@@ -68,7 +68,7 @@
 
 <div id="shortChefGifContainer">
 <div id="shortChefGifInnerContainer">
-<img id="logoImg" src="assets/images/short-chef-logo-hover-over.png" alt="Short Chef Logo Animation Waving" />
+<img id="logoImg" src="assets/images/short-chef-logo-hover-over.png" alt="Short Chef Logo Animation Still Image" />
 <img id="logoGif" src="assets/gifs/short-chef-logo-animation.gif" alt="Short Chef Logo Animation Waving" />
 </div>
 <p>What should we make today?</p>
@@ -115,6 +115,7 @@
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
@@ -138,12 +139,19 @@
 <input type="submit" value="Submit"></input>
 
 </form>
+
+<div id="modalLogo">
+     <a href="index.php"><img src="assets/images/short-chef-logo.png" alt="The Short Chef Logo" /></a>
+</div>
+
 </div>
 
 </div>
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 

@@ -27,19 +27,25 @@ window.onclick=function(e){
 
 function showModal(){
 	subscribeModal.style.display="block";
+	subscribeModalBackdrop.style.display="block";
+	subscribeModalBackdrop.style.opacity="0.7";	
 }
 
 function hideModal() {
 	subscribeModal.style.display="none";
+	subscribeModalBackdrop.style.display="none";
+	subscribeModalBackdrop.style.opacity="0";
 }
 
 var subscribeButton=document.getElementById("subscribeButton");
 var subscribeModal=document.getElementById("subscribeModal");
+var subscribeModalBackdrop=document.getElementById("subscribeModalBackdrop");
 var closeModal=document.getElementById("closeModal");
 
 
 subscribeButton.addEventListener("click", showModal, false);
 closeModal.addEventListener("click", hideModal, false);
+subscribeModalBackdrop.addEventListener("click", hideModal, false);
 
 /* End of subscribe modal code */
 

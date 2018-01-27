@@ -110,13 +110,13 @@ down gently to make the sandwiches. Transfer to napkins or plates and serve.</li
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
 <h3>Subscribe!</h3>
 </div>
 <div class="modalContent">
-
 <p>Want frequent new menu ideas and healthy eating tips and recipes?  Join our mailing list!</p>
 
 <div class="contactFormContainer modalForm">
@@ -140,6 +140,8 @@ down gently to make the sandwiches. Transfer to napkins or plates and serve.</li
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 

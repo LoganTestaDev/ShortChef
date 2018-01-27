@@ -138,13 +138,13 @@ need to include them all.</p>
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
 <h3>Subscribe!</h3>
 </div>
 <div class="modalContent">
-
 <p>Want frequent new menu ideas and healthy eating tips and recipes?  Join our mailing list!</p>
 
 <div class="contactFormContainer modalForm">
@@ -168,6 +168,8 @@ need to include them all.</p>
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 

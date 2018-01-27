@@ -396,21 +396,39 @@ border: none;
 background-color: #df7401;
 }
 
+#subscribeModalBackdrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	opacity: 1;
+    background-color: #000000;
+}
 
+#modalLogo {
+	padding-top: 15px;
+	padding-left: 30px;
+}
+
+#modalLogo img {
+	height: 100px;
+}
 
 #subscribeModal {
 	display: none;
 	background-color: #ffffff;
-
 	position: fixed;
-	z-index: 1;
 	top: 20px;
 	margin-left: 200px;
-
+    z-index: 101;
 	overflow: auto;
-	width: 800px;
+	
+	width: 100%;
+	height: 100%;
 	box-sizing: border-box;
-	opacity: 0.99;
 	border: 2px solid black; 
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px #000000;
@@ -419,7 +437,6 @@ background-color: #df7401;
 #subscribeModal h3 {
 	text-align: center;
 	color: #000000;
-
 }
 
 .modalHeader {
@@ -429,7 +446,7 @@ background-color: #df7401;
 }
 
 .modalContent {
-	padding: 20px 10px 20px 10px;
+	padding: 15px 10px 10px 10px;
 }
 
 .modalFooter {
@@ -607,7 +624,6 @@ footer p {
 #subscribeModal {
 
 position: fixed;
-	z-index: 1;
 	top: 30px;
 
 	margin-left: 10%;
@@ -668,10 +684,6 @@ position: fixed;
 	padding-top: 23px;
 	padding-left: 10px;
 }
-
-#logo img {
-	height: 150px;
-}
 	
 	header {
 	     height: 200px;
@@ -700,7 +712,9 @@ nav {
 	padding-left: 0px;
 }
 
-
+#modalLogo img {
+	height: 150px;
+}
 	
 	
 }
@@ -890,7 +904,6 @@ height: 200px;
 
 #subscribeModal {
 position: fixed;
-	z-index: 1;
 	top: 100px;
 	margin-left: 200px;
 	

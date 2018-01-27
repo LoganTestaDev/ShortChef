@@ -114,6 +114,7 @@ Depending on your doctor's evaluation, he or she may refer you to a registered d
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
@@ -143,6 +144,8 @@ Depending on your doctor's evaluation, he or she may refer you to a registered d
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 

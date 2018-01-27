@@ -176,6 +176,7 @@ discusses the benefits of natural food cereals with children.</p></div>
 
 
 <div id="subscribeModal">
+
 <div id="subscribeModalContent">
 <div class="modalHeader">
 <div id="closeModal"><span>&times;</span></div>
@@ -205,6 +206,8 @@ discusses the benefits of natural food cereals with children.</p></div>
 </div>
 <div class="modalFooter">
 </div>
+</div>
+<div id="subscribeModalBackdrop">
 </div>
 
 
