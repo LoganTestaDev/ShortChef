@@ -1,210 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="" />
-<link rel="icon" type="image/png" href="assets/images/favicon.png" />
-<title>Short Chef</title>
-<link href='https://fonts.googleapis.com/css?family=Glass Antiqua' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
-<link rel="stylesheet" type="text/css" href="assets/css/main-styles.css" />
-
-<!-- HTML5 Shim, and respond.min.js.  For users on Internet Explorer 8 or earlier, allows HTML5 elements/CSS3 media queries to display with help from this JavaScript file. -->
-<!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js.1.4.2/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-<div id="bodyWrapper">
-
-<header>
-<div id="logo">
-     <a href="index.php"><img src="assets/images/short-chef-logo.png" alt="The Short Chef Logo" /></a>
-</div>
-<div id="titleContainer">
-<h1><a href="index.php">Short Chef<sup>&trade;<sup></a></h1>
-<p>Fighting Obesity One Child at a Time</p>
-</div>
-</header>
-
-
-
-
-<nav id="mobileNav">
-	<div class="dropdownArea">
-	<div class="dropButton" onclick="toggleShowDropdownContent();">
-	<div></div>
-	<div></div>
-	<div></div>
-	</div>
-	
-<div class="dropdownElements" id="navDropdown">
-    <a href="index.php">Home</a>
-	<a href="about-short-chef.php">About</a>
-	<a href="short-thoughts.php">Short Thoughts</a>
-	<a href="recipes-short-chef.php">Recipes</a>
-	<a href="events.php">Events</a>
-    <a href="contact-short-chef.php">Contact</a>
-	<a href="news.php">News</a>
-</div>
-</div>
-</nav>
-
-<nav id="desktopNav">	
-    <a href="index.php">Home</a>
-	<a href="about-short-chef.php">About</a>
-	<a href="short-thoughts.php">Short Thoughts</a>
-	<a href="recipes-short-chef.php">Recipes</a>
-	<a href="events.php">Events</a>
-    <a href="contact-short-chef.php">Contact</a>
-	<a href="news.php">News</a>
-</nav>
-
-
-<div id="heroImageContainer">
-<h2>Helping Our Kids to Have a Healthier Future!</h2>
-<h3>Hands on Kids' Nutrition</h3>
-</div>
-<div id="indexContentContainer">
-
-
-<div class="contentRow">
-<div class="content4"><img src="assets/images/index-short-chef-hero-image.jpg" alt="Short Chef photo" /></div>
-<div class="content8"><h3>Cook Easy, Healthy Food!</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi tempus. Lectus sit amet est placerat in egestas erat. 
-Rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae nunc sed velit dignissim. Nisl pretium fusce id velit ut tortor pretium viverra suspendisse. Lacus suspendisse faucibus interdum posuere. 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames. 
-viverra nibh cras. Proin gravida hendrerit lectus a.</p>
-
-</div>
-</div>
-
-<div class="contentRow">
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/indexNewsImages/news1.jpg" alt="Short Chef News item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Short Chef on WLRN</h4>
-	 <p>Short Chef teaches 50 kids how to cook another healthy meal. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi tempus. Lectus sit amet est placerat in egestas erat. 
-Rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae nunc sed velit dignissim. Nisl pretium fusce id velit ut tortor pretium viverra suspendisse. Lacus suspendisse faucibus interdum posuere. 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames. 
-viverra nibh cras. Proin gravida hendrerit lectus a</p>
-	 </div>
-</div>
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/indexNewsImages/news2.jpg" alt="Short Chef News item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Short Chef visits a lucky school...</h4>
-	 <p>Short Chef teaches 30 kids how to cook another healthy meal.</p>
-	 </div>
-</div>
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/indexNewsImages/news3.jpg" alt="Short Chef News item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Our Children are Overweight</h4>
-	 <p>Short Chef teaches 120 kids how to cook another healthy meal.</p>
-	 </div>
-</div>
-</div>
-<h3 class="centerText">Resources</h3>
-<div class="contentRow">
-
-
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/short-chef-apple-on-head.png" alt="Short Chef Resouce item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Fun in the Kitchen</h4>
-	 <p>Short Chef teaches 50 kids how to cook another healthy meal.</p>
-	 </div>
-</div>
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/short-chef-apple-on-head.png" alt="Short Chef News Resource item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Photo of Short Chef</h4>
-	 <p>Short Chef teaches 30 kids how to cook another healthy meal.</p>
-	 </div>
-</div>
-<div class="content4 news">
-     <div class="newsImgDiv"><img src="assets/images/balanced-meal.png" alt="Short Chef Resource item" /></div>
-	 <div class="newsTextDiv">
-	 <h4>Photo of Food</h4>
-	 <p>Short Chef teaches 120 kids how to cook another healthy meal.</p>
-	 </div>
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="clearBoth"></div>
-</div>
-
-<footer>
-<p>&copy; <?php echo date("Y"); ?> The Short Chef<sup>&trade;</sup>.  All Rights Reserved.</p>
-
-
-<div id="footerElements">
-<button id="subscribeButton">Subscribe</button>
-
-<div id="socialIcons">
-<div><a href="https://www.facebook.com/shortchef2011?fref=ts" target="_blank"><img src="assets/images/socialMediaIcons/facebook-logo.png" alt="Facebook logo" /></a></div>
-<div><a href="https://twitter.com/ShortChef51" target="_blank"><img src="assets/images/socialMediaIcons/twitter-logo.png" alt="Twitter logo" /></a></div>
-</div>
-</div>
-
-</footer>
-
-
-<div id="subscribeModal">
-
-<div id="subscribeModalContent">
-<div class="modalHeader">
-<div id="closeModal"><span>&times;</span></div>
-<h3>Subscribe!</h3>
-</div>
-<div class="modalContent">
-<p>Want frequent new menu ideas and healthy eating tips and recipes?  Join our mailing list!</p>
-
-<div class="contactFormContainer modalForm">
-<form class="contactForm" method="post" onsubmit="return validateModalForm();" action="process-modal-form.php">
-
-<label for="userFirstNameSubscribe"></label>
-<input type="text" id="userFirstNameSubscribe" name="userFirstNameSubscribe" placeholder="Enter First Name" required="required">
-
-<label for="userLastNameSubscribe"></label>
-<input type="text" id="userLastNameSubscribe" name="userLastNameSubscribe" placeholder="Enter Last Name" required="required">
-
-<label for="userEmailSubscribe"></label>
-<input type="email" id="userEmailSubscribe" name="userEmailSubscribe" placeholder="Enter Your email" required="required">
-
-<input type="submit" value="Submit"></input>
-
-</form>
-</div>
-
-</div>
-</div>
-<div class="modalFooter">
-</div>
-</div>
-<div id="subscribeModalBackdrop">
-</div>
-
-
-</div>
-</body>
-<script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <title>Short Chef</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/main-styles.css" />
+      <!-- HTML5 Shim, and respond.min.js.  For users on Internet Explorer 8 or earlier, allows HTML5 elements/CSS3 media queries to display with help from this JavaScript file. -->
+      <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js.1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div id="bodyWrapper">
+         <?php include 'assets/includePHP/navbar-components.php'; ?>
+         <?php include 'assets/includePHP/header-components.php'; ?>
+         <div id="heroImageContainer" class="index-hero-image-background showBottomBoundary">
+            <div class="inner-body-wrapper">
+               <div id="heroImageText" class="heroImageTextIndex">
+                  <h2>Helping Our Kids</h2>
+                  <h2>to Have a</h2>
+                  <h2>Healthier Future!</h2>
+                  <h3>Hands on Kids' Nutrition</h3>
+                  <div class="learn-more-wrapper">
+                     <a href="about-short-chef.php">
+                        <p class="strong">Learn More</p>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="featured-section inner-body-wrapper">
+            <div class="featured-items-row">
+               <div class="content-med-4 featured-section-wrapper fun-in-the-kitchen">
+                  <div class="featured-section-background-container">
+                     <div class="featured-section-wrapper-background"></div>
+                  </div>
+                  <div class="featured-section-item">
+                     <div class="featured-section-text-container">
+                        <div class="featured-items">
+                           <p><a href="fun-in-the-kitchen.php">Fun in the Kitchen</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="content-med-4 featured-section-wrapper choose-my-plate">
+                  <div class="featured-section-background-container">
+                     <div class="featured-section-wrapper-background"></div>
+                  </div>
+                  <div class="featured-section-item">
+                     <div class="featured-section-text-container">
+                        <div class="featured-items">
+                           <p><a href="choose-my-plate.php">Choose My Plate</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="content-med-4 featured-section-wrapper about-short-chef">
+                  <div class="featured-section-background-container">
+                     <div class="featured-section-wrapper-background"></div>
+                  </div>
+                  <div class="featured-section-item">
+                     <div class="featured-section-text-container">
+                        <div class="featured-items">
+                           <p><a href="about-short-chef.php">About Short Chef</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="hidden-item-wrapper">
+               <div class="content-med-4 hidden-item fun-in-the-kitchen">
+                  <div class="hidden-text-container">
+                     <div class="hidden-text">
+                        <p>Hello!</p>
+                     </div>
+                     <div class="read-more">
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-text">
+                           <a href="fun-in-the-kitchen.php">
+                              <p>Read More!</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="content-med-4 hidden-item choose-my-plate">
+                  <div class="hidden-text-container">
+                     <div class="hidden-text">
+                        <p>Before you eat, think about what goes on your plate or in your cup or bowl.</p>
+                     </div>
+                     <div class="read-more">
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-text">
+                           <a href="fun-in-the-kitchen.php">
+                              <p>Read More!</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="content-med-4 hidden-item about-short-chef">
+                  <div class="hidden-text-container">
+                     <div class="hidden-text">
+                        <p>Greetings!</p>
+                     </div>
+                     <div class="read-more">
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-circle"></div>
+                        <div class="read-more-text">
+                           <a href="fun-in-the-kitchen.php">
+                              <p>Read More!</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+			   <div class="clear-both"></div>
+            </div>
+         </div>
+         <?php include 'assets/includePHP/events-components.php'; ?>
+         <div class="index-row recipes-section spiral-background">
+            <div class="inner-body-wrapper">
+               <a href="recipes-short-chef.php">
+                  <h2>Recipes</h2>
+               </a>
+               <div class="recipeRow recipe-row-1">
+                  <div class="content-med-8 content-lar-6 recipe-1">
+                     <div class="recipe-wrapper">
+                        <div class="content-lar-8 recipes-section-background-container">
+                           <div class="recipe-background recipe-background-1"></div>
+                        </div>
+                        <div class="content-lar-4 recipe-info-container">
+                           <div class="recipe-info recipe-info-1 justify-center">
+                              <div class="recipe-info-item">
+                                 <a href="short-chef-march-2013-interview.php">
+                                    <h4>Strawberry and Banana Cream Sandwich</h4>
+                                 </a>
+                                 <p class="recipe-date">Nov 21, 2018</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="content-med-6 content-lar-6 recipe-2">
+                     <div class="recipe-wrapper">
+                        <div class="recipes-section-background-container">
+                           <div class="recipe-background recipe-background-2"></div>
+                        </div>
+                        <div class="recipe-info recipe-info-2 justify-center">
+                           <div class="recipe-info-item">
+                              <a href="pbj-on-a-roll.php">
+                                 <h4>PB&J On a Roll</h4>
+                              </a>
+                              <p class="recipe-date">Nov 21, 2018</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="clear-both"></div>
+               </div>
+               <div class="recipeRow recipe-row-2">
+                  <div class="content-med-4 left-col">
+                     &nbsp;
+                  </div>
+                  <div class="content-med-8 recipe-3">
+                     <div class="recipe-wrapper">
+                        <div class="content-med-7 recipes-section-background-container">
+                           <div class="recipe-background recipe-background-3"></div>
+                        </div>
+                        <div class="content-med-5 recipe-info-container">
+                           <div class="recipe-info recipe-info-3 justify-center">
+                              <div class="recipe-info-item">
+                                 <a href="checkerboard-salad.php">
+                                    <h4>Checkerboard Salad</h4>
+                                 </a>
+                                 <p class="recipe-date">Nov 20, 2018</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="clear-both"></div>
+                     </div>
+                  </div>
+                  <div class="clear-both"></div>
+               </div>
+               <div class="recipeRow recipe-row-3">
+                  <div class="see-more justify-center">
+                     <div class="see-more-content">
+                        <p><a href="recipes-short-chef.php">View More</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="index-row short-thoughts-section inner-body-wrapper">
+            <a href="short-thoughts.php">
+               <h2>Short Thoughts</h2>
+            </a>
+            <div class="content-row content-row-pad">
+               <div class="content-med-6 left-col short-thoughts-item-wrapper">
+                  <div class="content-med-12">
+                     <div class="short-thoughts-background featured-photo"></div>
+                  </div>
+               </div>
+               <div class="content-med-7 content-lar-6 right-col">
+                  <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
+                     <div class="content-sml-6 content-lar-5">
+                        <div class="short-thoughts-background short-thoughts-background-1"><a href="eating-healthy-at-fast-food-restaurants.php"></a></div>
+                     </div>
+                     <div class="content-sml-6 content-lar-7">
+                        <div class="short-thoughts-info">
+                           <div class="short-thoughts-info-content">
+                              <a href="eating-healthy-at-fast-food-restaurants.php">
+                                 <p>Short Thoughts #1: How to maintain a healthy diet at a fast food restaurant...</p>
+                              </a>
+                           </div>
+                           <div class="read-more">
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-text">
+                                 <a href="eating-healthy-at-fast-food-restaurants.php">
+                                    <p>READ MORE</p>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
+                     <div class="content-sml-6 content-lar-5">
+                        <div class="short-thoughts-background short-thoughts-background-2"><a href="fun-in-the-kitchen.php"></a></div>
+                     </div>
+                     <div class="content-sml-6 content-lar-7">
+                        <div class="short-thoughts-info">
+                           <div class="short-thoughts-info-content">
+                              <a href="fun-in-the-kitchen.php">
+                                 <p>Short Thoughts #2</p>
+                              </a>
+                           </div>
+                           <div class="read-more">
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-text">
+                                 <a href="fun-in-the-kitchen.php">
+                                    <p>READ MORE</p>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
+                     <div class="content-sml-6 content-lar-5">
+                        <div class="short-thoughts-background short-thoughts-background-3"><a href="choose-my-plate.php"></a></div>
+                     </div>
+                     <div class="content-sml-6 content-lar-7">
+                        <div class="short-thoughts-info">
+                           <div class="short-thoughts-info-content">
+                              <a href="choose-my-plate.php">
+                                 <p>Short Thoughts #3</p>
+                              </a>
+                           </div>
+                           <div class="read-more">
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-circle"></div>
+                              <div class="read-more-text">
+                                 <a href="choose-my-plate.php">
+                                    <p>READ MORE</p>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="kitchen-utensil kitchen-utensil-1"></div>
+         <div class="kitchen-utensil kitchen-utensil-2"></div>
+         <div class="kitchen-utensil kitchen-utensil-3"></div>
+         <div id="coordinates"></div>
+         <?php include 'assets/includePHP/footer-components.php'; ?>
+         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+   </body>
+   <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>
+   <script type="text/javascript" src="assets/javascript/featured-content-functions.js"></script>
+   <script type="text/javascript" src="assets/javascript/show-hide-elements.js"></script>
 </html>

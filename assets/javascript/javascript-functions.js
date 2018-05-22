@@ -2,14 +2,14 @@
 
 /* Dropdown navigation menu code */
 function toggleShowDropdownContent(){
-     document.getElementById("navDropdown").classList.toggle("showDropdownContent");	
+     document.getElementById("navDropdown").classList.toggle("show-dropdown-content");	
 }
 
 window.onclick=function(e){
-	if(!e.target.matches('.dropButton')){
+	if(!e.target.matches('.drop-button')){
 		var navDropdown=document.getElementById("navDropdown");
-		if(navDropdown.classList.contains('showDropdownContent')){
-		navDropdown.classList.remove('showDropdownContent');
+		if(navDropdown.classList.contains('show-dropdown-content')){
+		navDropdown.classList.remove('show-dropdown-content');
 		}
 	}
 }

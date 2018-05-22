@@ -1,16 +1,203 @@
 
+/* Note: This is a mobile-first stylesheet.  Some key notes:
+> We state key brand colors.
+> There are some baseline styles that are reset for most html elements.  
+> There is a border-box applied so that width is calculated to include padding thus making it easier to determine element widths and change styles and layout.
+> This site uses a grid system to formate sections of the page in columns sitewide more easily.  It is explained in further detail later on. 
+> There are general styles.  Then there are more specific section and page styles.  
+> Then for several breakpoints these styles are partially/wholly overwritten to customize the site for larger width layouts.  Note: grid-base content styles are overriden in the grid section
+    width media queries too.  Note that while the site may determine most of the columns at say the phone-to-tablet breakpoint of content-med-n, most of the actual styles for page elements may actually occur in 
+	mobile and desktop but not in the intermediate tablet region.
+*/
+
+
+/* orange:                           #ef8a1e                  */
+/* yellow (home page header text)    #fdce0f                  */     
+/* light blue/teal                   #15b2c1                  */
+
+
 /* Reset the styles */
 html, body, div, header, nav, footer, p, span, img, a, br, ul, li, ol, table, thead, tbody, th, tr, td, input, label, textarea, form, h1, h2, h3, h4, h5, h6 {
-
 	margin: 0px;
 	border: 0px;
 	padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: normal;
 }
 
+/* For easier maintainability, set an element's width, padding, margin, and border into a final width, and enable this on all elements.   */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+
+
+/******************************************* GRID SYSTEM ***************************************/
+
+/* For most scenarios, the content-med will be used as the main way to divide columns out into percentages instead of all 100% width.  This is intended to be the breakpoint between mobile phones and tablets/desktops 
+wider than them. Often we will want to stack items on top of each other at 100% width on phones but place them side by side in percentages on tablets and desktops.
+
+Thus, for situations where you need to split columns on tablets and desktops, but 100% width on phones, use content-med-n.  This is intended to be the "default".
+
+For situations where you need split columns on everything and thus at all sizes, i.e. on phones and everything bigger, you can use .content-sml-n, etc.  This intended to be somewhat rarely needed.
+
+For situations where you need to only split columns on large devices but not on small or medium, use content-lar-n; on phones and tablets these columns will display as 100% width, but on laptops/desktops they will 
+display as side by side columns.  This will be relatively uncommonly needed and more often you will split at the phone/tablet breakpoint content-med-n.
+
+*/
+
+.content-sml-1, .content-sml-2, .content-sml-3, .content-sml-4, .content-sml-5, .content-sml-6, .content-sml-7, .content-sml-8, .content-sml-9, .content-sml-10, .content-sml-11, .content-sml-12,
+.content-med-1, .content-med-2, .content-med-3, .content-med-4, .content-med-5, .content-med-6, .content-med-7, .content-med-8, .content-med-9, .content-med-10, .content-med-11, .content-med-12,
+.content-lar-1, .content-lar-2, .content-lar-3, .content-lar-4, .content-lar-5, .content-lar-6, .content-lar-7, .content-lar-8, .content-lar-9, .content-lar-10, .content-lar-11, .content-lar-12 {
+	display: block;
+	float: left;
+	width: 100%;		
+}
+
+.content-sml-1 { width: 8.3333333333%; }
+.content-sml-2 { width: 16.6666666667%; }
+.content-sml-3 { width: 25%; }
+.content-sml-4 { width: 33.3333333333%; }
+.content-sml-5 { width: 41.6666666667%; }
+.content-sml-6 { width: 50%; }
+.content-sml-7 { width: 58.3333333333%; }
+.content-sml-8 { width: 66.6666666667%; }
+.content-sml-9 { width: 75%; }
+.content-sml-10 { width: 83.3333333333%; }
+.content-sml-11 { width: 91.6666666667%; }
+.content-sml-12 { width: 100%; }
+
+/*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width  is above a certain value.  */
+.content-row-pad > .content-sml-1, .content-row-pad > .content-sml-2, .content-row-pad > .content-sml-3, .content-row-pad > .content-sml-4, .content-row-pad > .content-sml-5, .content-row-pad > .content-sml-6, 
+.content-row-pad > .content-sml-7, .content-row-pad > .content-sml-8, .content-row-pad > .content-sml-9, .content-row-pad > .content-sml-10, .content-row-pad > .content-sml-11, .content-row-pad > .content-sml-12 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+@media only screen and (min-width: 700px) {	
+.content-med-1 { width: 8.3333333333%; }
+.content-med-2 { width: 16.6666666667%; }
+.content-med-3 { width: 25%; }
+.content-med-4 { width: 33.3333333333%; }
+.content-med-5 { width: 41.6666666667%; }
+.content-med-6 { width: 50%; }
+.content-med-7 { width: 58.3333333333%; }
+.content-med-8 { width: 66.6666666667%; }
+.content-med-9 { width: 75%; }
+.content-med-10 { width: 83.3333333333%; }
+.content-med-11 { width: 91.6666666667%; }
+.content-med-12 { width: 100%; }
+
+/*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width  is above a certain value.  */
+.content-row-pad > .content-med-1, .content-row-pad > .content-med-2, .content-row-pad > .content-med-3, .content-row-pad > .content-med-4, .content-row-pad > .content-med-5, .content-row-pad > .content-med-6, 
+.content-row-pad > .content-med-7, .content-row-pad > .content-med-8, .content-row-pad > .content-med-9, .content-row-pad > .content-med-10, .content-row-pad > .content-med-11, .content-row-pad > .content-med-12 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+}
+
+
+@media only screen and (min-width: 1200px) {
+.content-lar-1 { width: 8.3333333333%; }
+.content-lar-2 { width: 16.6666666667%; }
+.content-lar-3 { width: 25%; }
+.content-lar-4 { width: 33.3333333333%; }
+.content-lar-5 { width: 41.6666666667%; }
+.content-lar-6 { width: 50%; }
+.content-lar-7 { width: 58.3333333333%; }
+.content-lar-8 { width: 66.6666666667%; }
+.content-lar-9 { width: 75%; }
+.content-lar-10 { width: 83.3333333333%; }
+.content-lar-11 { width: 91.6666666667%; }
+.content-lar-12 { width: 100%; }
+
+/*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width  is above a certain value.  */
+.content-row-pad > .content-lar-1, .content-row-pad > .content-lar-2, .content-row-pad > .content-lar-3, .content-row-pad > .content-lar-4, .content-row-pad > .content-lar-5, .content-row-pad > .content-lar-6, 
+.content-row-pad > .content-lar-7, .content-row-pad > .content-lar-8, .content-row-pad > .content-lar-9, .content-row-pad > .content-lar-10, .content-row-pad > .content-lar-11, .content-row-pad > .content-lar-12 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+}
+
+.content-container {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #ffffff;
+	padding: 0px 10px 0px 10px;
+}
+
+@media only screen and (min-width: 1200px) {
+.content-container {
+	padding: 10px 0 10px 0;
+}
+}
+
+
+/* When you have multiple content-columns (as immediate sub-div children of .content-row, make the left most content column have 0 left padding and the right most have 0 right padding.  Thus
+we avoid duplicating any surrounding-divs padding like in content-container. */
+.content-row > div:first-child {
+	padding-left: 0px;
+}
+
+.content-row > div:last-child {
+	padding-right: 0px;
+}
+
+/* These two content-row styles allow elements inside the content row to display evenly spaced across the screen. */
+.content-container .content-row {
+	 padding: 0 0 20px 0; 
+	 flex: 1 auto;
+} 
+
+.content-container .content-row:last-child{
+	padding: 0 0 0 0;
+} 
+
+@media only screen and (min-width: 700px) {
+	.content-container .content-row {
+	     padding: 0 0 0 0;
+    }	
+}
+/************************* End of GRID SYSTEM ************************************/
+
+
+
+/* Major layout settings */
+#bodyWrapper {
+	position: relative;
+	width: 100%;
+	min-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+}
+
+/*Use when you want to restrict part of the website to the 'standard' max width instead of going all the way to the edges of the screen.  That is, use it to keep an (invisible) wrapper around the content it surrounds
+rather than always extending to the edge of the screen by default */
+.inner-body-wrapper {
+	position: relative;
+	min-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
 /* Additional Customizations for this website */
+
+p, li {
+	line-height: 22.4px;
+	padding-bottom: 15px;
+}
 
 ul {
 	list-style-type: none;
@@ -25,44 +212,86 @@ a:link, a:visited {
 }
 
 a:hover {
-	color: #df7401;
-}
-
-p, li {
-	line-height: 22.4px;
+	color: #15b2c1;
 }
 
 ol {
 	padding-left: 15px;
 }
 
-
 audio {
 	padding: 10px 0 10px 0;
 }
 
 
-
-/* Start of CSS for site. */
-
-header {
-	padding: 0 5px 0px 5px;
-	background-color: #778891;
-	background: linear-gradient(to right, #255976, #256f92, #255976);
-	color: #df7401;
+/* Sitewide General Use Classes */
+/* .clear-both: After a series of divs that are floated, create another div and apply this style to it.  The containing element will now adopt the height of the subelements insead of having 0 height as the floated subelements 
+are not in the "flow" of the document anymore. */
+.clear-both {
+	clear: both;
 }
 
-header p {
-	font-size: 18px;
+.justify-center {	
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.center-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 0 10px 0;
+}
+
+.strong {
 	font-weight: bold;
-	font-family: 'Glass Antiqua', Arial, Helvetica, sans-serif;
 }
 
+
+/******************************* Start of general styles for site. *******************************************/
+header {
+	padding: 0 10px 0px 10px;
+	position: absolute;
+	width: 100%;
+}
+
+h2 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 28px;
+}
+
+h3 {
+	padding-top: 0px;
+	padding-bottom: 10px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+h4 {
+	padding: 5px 0 5px 0;
+    font-size: 18px;
+	font-weight: bold;
+}
+
+h1 sup {
+	font-size: 14px;
+}
 
 footer {
-	padding: 5px;
-	background: #778891;
-	background: linear-gradient(to right, #255976, #256f92, #255976);
+	min-height: 275px;
+	padding: 20px 10px 50px 10px;
+	border-top: 5px solid #ef8a1e;
+	background: #fdce0f;
+	background: linear-gradient(#fdce0f, #ef8a1e);
+	clear: both;
 }
 
 footer p {
@@ -70,184 +299,15 @@ footer p {
 }
 
 
-nav {
-	padding: 5px;
-	background-color: #df7401;
-	background: linear-gradient(#ff8800, #ff5500);
-	padding-top: 10px;
-	padding-bottom: 10px;
-	
-
-}
-
-nav a {
-	display: inline;
-}
-	
-nav a {
-	font-size: 16px;
-}
-
-nav a:link, nav a:visited{	
-	color: #fefefe;
-}
-
-nav a:hover{
-	color: #000000;
-		text-shadow: none;
-		text-decoration: underline;
-}
-
-.dropdownArea .dropButton {
-	cursor: pointer;
-    border: none;
-	outline: none;
-	background-color: inherit;
-}
-
-.dropButton div {
-	width: 35px;
-	height: 5px;
-	margin-top: 6px;
-	background-color: #000000;
-}
-
-.dropdownElements {
-    display: none;
-}
-
-.dropdownElements a {
-   display: block;
-   padding-left: 10px;
-   padding-top: 10px;
-}
-
-.showDropdownContent {
-	display: block;
-}
-
-
-
-#desktopNav {
-display: none;
-}
-
-
-
-
-
-
-#bodyWrapper {
-	box-sizing: border-box;
-	min-width: 300px;
-	background-color: #ffffff;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#indexContentContainer {
-	width: 100%;
-	background-color: #ffffff;
-		box-sizing: border-box;
-
-}
-
-h1 a:link, h1 a:visited {
-	font-size: 32px;
-	font-weight: bold;
-	color: #df7401;
-	font-family: 'Glass Antiqua', Arial, Helvetica, sans-serif;
-	text-shadow: 1px 1px 2px #000000;
-}
-
-h2 {
-	color: #333333;
-	font-size: 28px;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 5px;
-	text-shadow: 1px 1px 2px #eeeeee;
-}
-
-h3 {
-		color: #df7401;
-	font-size: 24px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-h2, h3 {
-
-	font-weight: bold;
-}
-
-
-
-
-
-h4 {
-    font-size: 22px;
-	padding: 5px 0 5px 0;
-
-}
-
-h1 sup {
-	font-size: 14px;
-}
-
-
-	
-
-
-#contentContainer {
-	width: 100%;
-
-	background-color: #ffffff;
-		box-sizing: border-box;
-padding: 10px;
-}
-
-
-
-
-
-
-.contactFormContainer {
-width: 100%;
-max-width: 600px;
-box-sizing: border-box;
-margin-left: auto;
-margin-right: auto;
-margin-top: 10px;
-	padding: 12px;
-	 border: 1px solid #cccccc; 
-	border-radius: 5px;
-	background-color: #eeeeee;
-
-}
-
-.modalForm {
-	border: 0px;
-	background-color: #ffffff;
-}
-
-.contactFormContainer label {
-	font-weight: bold;
-}
-
 input[type=text], input[type=email], select, textarea {
-width: 100%;
-box-sizing: border-box;
-	 margin-top: 5px;
-	 margin-bottom: 15px; 
-	 resize: vertical;
-	 padding: 10px; 
-	 border: 1px solid #cccccc; 
-	 border-radius: 5px;
-		
+	width: 100%;
+	resize: vertical;
+	padding: 10px; 
+	border: 1px solid #cccccc;	
+	margin-top: 5px;
+	margin-bottom: 15px; 
+	border-radius: 5px;	
 }
-
-
 
 input:focus, textarea:focus {
 	outline: none;
@@ -261,141 +321,236 @@ textarea {
 }
 
 input[type=submit] {
-	background: linear-gradient(#009900, #006600);
 	padding: 8px 20px 8px 20px;
 	border-radius: 5px;
 	font-weight: bold;
-	box-sizing: border-box;
+	background: linear-gradient(#009900, #006600);
 }
-
 
 input[type=submit]:hover, #subscribeButton:hover {
-	background: #bbccdd;
+	background: #15b2c1;
 }
 
+#heroImageText h2, footer .title-container p {
+	text-shadow: 1px 1px 2px rgba(51, 51, 51, 0.8);
+}	
 
-#shortChefGifContainer {
+h1, h2, nav a, footer .title-container p, .learn-more-wrapper p, .featured-section-text-container a, .events-section h3, .events-section .events-section-text-container p, 
+.recipes-section h3, .recipes-section h4, .read-more-text p, .recipes-section a, 
+.page-sub-header.row-two, h3.major-subheading,
+.step-number,
+.subpage-content-closing-container p {
+	font-family: 'Luckiest Guy', cursive, Arial, Helvetica, sans-serif;
+}
+
+.spiral-background {
+	background-image: url("../images/blue-radial-background.jpg");
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.featured-section .featured-section-item, .events-section .events-section-text-container p, .events-section h3, .recipes-section h2, .recipes-section h4, .short-thoughts-section h2,
+.page-sub-header.row-two, h3.major-subheading,
+.step-number,
+.subpage-content-closing-container p {
+	text-shadow: 0 2px rgba(51, 51, 51, 0.8);
+}
+
+.index-row h2, h3.major-subheading {
+	font-size: 36px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.major-subheading {
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+/* Sitewide navbar */
+nav {
+	padding: 10px 5px 10px 5px;
+	border-bottom: 5px solid #fdce0f;    
+	background-color: #ef8a1e; 
+}
+
+nav a {
+	display: inline;
+	font-weight: bold;
+	font-size: 16px;
+}
+	
+nav a:link, nav a:visited {	
+	color: #000000;
+}
+
+nav a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.drop-button {
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: 15px;
+	border: none;
+	outline: none;
+	background-color: inherit;
+	background: url("../images/hamburger-menu.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.dropdown-elements {
+    display: none;
+}
+
+.dropdown-elements a {
+   display: block;
+   padding-left: 30px;
+   padding-top: 20px;
+   font-size: 20px;
+}
+
+.show-dropdown-content {
+	display: block;
+}
+
+#desktopNav {
 	display: none;
 }
 
-#heroImageContainer {
 
-background-image: url("../images/short-chef-with-apple.jpg");
-height: 280px;
-background-position: center 30%;
-background-size: cover;
-background-repeat: no-repeat;
-}
-
-#heroImageContainer.alternateHero {
-	background-image: url("../images/404-short-chef-hero-image.png");
-	background-size: contain;
-    width: 40%; 
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#heroImageContainer h3 {
-	color: #000000;
-	text-align: center;
-}
-
-.contentRow {
-	width: 100%;
-
-}
-
-
-.content4 {
-
-	width: 100%;
-	padding: 10px;
-	/*border: 1px solid #000; */	
-	box-sizing: border-box;
-/*	background-color: #ccc; */
-
-}
-
-.content8 {
-	width: 100%;
-	padding: 10px;
-	/*border: 1px solid #000;	*/
-	box-sizing: border-box;
-	/*background-color: #999;*/
-}
-
-
-
-.content4 img{
-display: block;	
-	width: 100%;
-	max-width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-/*General Use Classes */
-.clearBoth {
-	clear: both;
-}
-
-.centerText {
-	text-align: center;
-}
-
-.centerImage {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px 0 10px 0;
-}
-
-/* End of General Positioning Classes */
-
-
-
-.newsImgDiv img {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.newsTextDiv {
+/*breadcrumbs */
+.breadcrumbs {
 	padding-top: 10px;
+	padding-bottom: 0;
+	padding-left: 10px;
 }
 
-.newsTextDiv h4 {
-	padding-bottom: 10px;
+.breadcrumbs-nav li {
+	display: inline-block;
+	line-height: 16px;
+	padding-bottom: 0;
+}
+
+.breadcrumbs-nav li a {
+	color: #256f92;
+	font-weight: bold;
+}
+
+.breadcrumbs-nav li:after {
+	content: " > ";
+	color: #256f92;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.breadcrumbs-nav li:last-child:after {
+	content: "";
+}
+
+
+/* Hero image styles */
+#heroImageContainer {
+	min-height: 400px;
+	background-image: url("../images/short-chef-hero-image.jpg");
+	background-position: center 30%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#heroImageContainer.hide-bottom-boundary {
+	border-bottom: 0;
+}
+
+#heroImageContainer.index-hero-image-background {
+	background-image: url("../images/short-chef-hero-image.jpg");	
+}
+
+#heroImageContainer.about-hero-image-background {
+	background-image: url("../images/short-chef-with-apple.jpg");	
+}
+
+#heroImageText {
+	padding-top: 115px;
+}
+
+#heroImageText h2, #heroImageText h3 {
 	text-align: center;
 }
 
+#heroImageText h2 {
+	padding-top: 0;
+	padding-bottom: 0;
+	font-weight: normal;
+	color: #ffffff;
+}
 
-#footerElements {
- /* width: 270px;  
-/* height: 100px; */
-padding: 10px 0 10px 0; 
+#heroImageText h2:nth-of-type(2){
+	color: #fdce0f;
+}
+	
+#heroImageText h3 {
+	font-size: 20px;
+	color: #000000;
+}	
+
+
+/* Logo and title-container styles */	
+.title-container {
+	width: 300px;
+	padding-top: 12px;
+	padding-left: 87px;
 	margin-left: auto;
 	margin-right: auto;
-display: flex;
-justify-content: center;
+}
+
+.title-container p {
+    color: #000000;
+	line-height: 3px;
+}	
+	
+.title-container .title-line-1 {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.title-container .title-line-2 {
+	font-size: 13px;
+	font-style: oblique;
+}
+
+.logo, .title-container {
+	position: relative;
+	top: -45px;
+}
+
+.logo {
+	width: 122px;
+	height: 90px;
+	margin-left: auto; 
+	margin-right: auto; 
+	background-image: url("../images/short-chef-logo-with-text.png");
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.logo a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
 }
 
 
-
-/* Start of modal styles */
-
-#subscribeButton {
-padding: 10px 15px 10px 15px;	
-font-size: 24px;
-border-radius: 10px;
-outline: none;
-border: none;
-background-color: #df7401;
-}
-
+/* Subscribe modal section */
 #subscribeModalBackdrop {
 	display: none;
 	position: fixed;
@@ -406,6 +561,11 @@ background-color: #df7401;
 	z-index: 100;
 	opacity: 1;
     background-color: #000000;
+}
+
+.modal-form {
+	border: 0px;
+	background-color: #ffffff;
 }
 
 #modalLogo {
@@ -419,18 +579,17 @@ background-color: #df7401;
 
 #subscribeModal {
 	display: none;
-	background-color: #ffffff;
 	position: fixed;
-	top: 20px;
-	margin-left: 200px;
+	top: 30px;
+	width: 80%;
+	max-height: 673px;
     z-index: 101;
-	overflow: auto;
-	
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	border: 2px solid black; 
+	margin-left: 10%;
+	margin-right: 10%;
+	overflow-y: scroll;
+	border: 2px solid #000000; 
 	border-radius: 5px;
+	background-color: #ffffff;
 	box-shadow: 0px 0px 10px #000000;
 }
 
@@ -439,19 +598,18 @@ background-color: #df7401;
 	color: #000000;
 }
 
-.modalHeader {
-	
+.modal-header {
+	height: 75px;
 	padding: 15px 10px 15px 10px;
 	background: linear-gradient(#009900, #006600);
 }
 
-.modalContent {
+.modal-content {
 	padding: 15px 10px 10px 10px;
 }
 
-.modalFooter {
-	
-padding: 15px 10px 55px 10px;
+.modal-footer {
+	height: 100px;
 	background: linear-gradient(#006600, #009900);
 }
 
@@ -471,16 +629,35 @@ padding: 15px 10px 55px 10px;
 	cursor: pointer;
 }
 
-/* End of modal styles */
 
+/* Footer styles */
+#subscribeButton {
+	padding: 10px 15px 10px 15px;	
+	border-radius: 10px;
+	border: 0;
+	outline: none;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #ffffff;
+	box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.2);
+}
 
+.subscribe-button-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-social-elements {
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #socialIcons {
-float: left;
-	padding-top: 10px;
-	width: 103px;
-	padding-left: 25px;
-
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	padding-top: 30px;
 }
 
 #socialIcons img {
@@ -491,6 +668,7 @@ float: left;
 	box-shadow: 0 0 5px 5px #fefefe;
 	transition: 0.5s;
 }
+
 #socialIcons div {
 	float: left;
 }
@@ -499,19 +677,739 @@ float: left;
 	padding-left: 25px;
 }
 
+footer .logo {
+	position: static;
+	width: 100%;
+	height: 135px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(../images/short-chef-logo-white-text.png);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+	
+footer .title-container {
+	position: static;
+    width: 100%;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 0;
+	margin-left: auto;
+	margin-right: auto;
+}	
 
-#clientSideValidationFeedback{
-	padding-left: 10px;
-	font-weight: bold;
+footer .title-container p {
+	font-size: 32px;
+	line-height: 42px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.footer-nav {
+	padding: 10px 0px;
+}
+
+.footer-nav.mobile-nav {
+	display: block;
+}
+
+.footer-nav.desktop-nav {
+	display: none;
+}	
+
+.footer-nav a {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.item-divider {
+	display: inline-block;
+}
+
+.footer-nav .nav-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 
-#restaurantEatingGuide {
+/***************   short chef gif    **************************/
+.short-chef-gif-container {
+	display: none;
+}
+
+
+/* Avocado and eye-tracking styles */
+#mouseCoords {
+	line-height: 0;
+	padding: 0;
+}
+
+
+
+/********************************************** BEGINING OF INDEX SPECIFIC STYLES *****************************************************/
+/*******************************  index shared among several sections   *********************************/
+.events-date, .recipe-date {
+	font-style: italic;
+	font-size: 15px;
+}
+
+.index-row h3 {
+	padding-bottom: 20px;
+	font-size: 28px;
+	text-align: center;
+}
+
+.featured-section-wrapper, .hidden-item {
+	padding: 0 15px 0 15px;
+}
+
+/***********************   read more styles   **************************/
+.short-thoughts-section .read-more {
+	display: none;
+ }
+
+.read-more-circle, .read-more-text {
+	display: inline-block;
+	background-color: #ffffff;
+}
+
+.read-more-circle {	
+	width: 10px;
+	height: 10px;
+	margin-right: 1px;
+	border-radius: 10px;
+}
+
+.read-more-circle:nth-of-type(2) {
+	position: relative;
+	top: 2px;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+}
+
+.read-more-text {
+	border-radius: 15px;
+	padding: 5px 15px 5px 15px;
+}
+
+.read-more-text p {
+	padding-bottom: 0;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+
+/******************************   learn more section   ***************************************/
+.learn-more-wrapper {
+	width: 195px;
+	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
+	border: 3px solid #fdce0f;
+	border-radius: 50px;
+	text-align: center;	
+	background-color: #ef8a1e;
+}
+
+.learn-more-wrapper p {
+	padding-top: 14px;
+	padding-bottom: 14px;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+
+/********************   featured section   ***************************************/
+.featured-section {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	background-color: #fdce0f; 
+	background: linear-gradient(#fdce0f, #ef8a1e);   
+}
+
+.featured-items-row {
+	padding-top: 30px;
+}
+
+.featured-section-wrapper {
+	min-height: 380px;
+}
+
+.featured-section-background-container {
+	position: relative;
+	z-index: 10;
+}
+
+.featured-section-item {
+	text-align: center;
+}
+
+.featured-section-wrapper-background {
+	height: 340px;
+	border-radius: 30px;	
+	background-color: #cccccc;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	transition: height 0.8s linear;
+}
+
+.fun-in-the-kitchen .featured-section-wrapper-background {
+	background-image: url("../images/short-chef-throwing-spaghetti-squash.png");
+}
+
+.choose-my-plate .featured-section-wrapper-background {
+	background-image: url("../images/myplate1.jpg");
+}
+
+.about-short-chef .featured-section-wrapper-background {
+	background-image: url("../images/short-chef-photo1.png");	
+}
+
+
+
+
+
+.featured-section-wrapper.active .featured-section-wrapper-background {
+	height: 200px;
+	transition: height 0.8s ease-out; 
+}
+
+.featured-section-text-container {
+	position:relative;
+	left: -6px;
+	top: -35px;
+	width: 104%;
+	z-index: 11;
+	border-radius: 20px;
+	background-color: #15b2c1;
+	box-shadow: 0 3px 2px 2px rgba(51, 51, 51, 0.5);
+}
+
+.featured-section-wrapper .hidden-item {
+	z-index: 9;
+}
+
+.fun-in-the-kitchen .hidden-item {
+	position: absolute;
+	top: 265px;
+}
+
+.choose-my-plate .hidden-item {
+	position: absolute;
+	top: 645px;
+}
+
+.about-short-chef .hidden-item {
+	position: absolute;
+	top: 1025px;
+}
+	
+.hidden-item-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 1140px;
+}
+
+.hidden-item {
+	min-height: 50px;
+}
+
+.hidden-text p {
+	padding-bottom: 5px;
+}
+
+.hidden-item.fun-in-the-kitchen {
+	position: absolute;
+	top: -930px;
+	
+}
+.hidden-item.choose-my-plate {
+	position: absolute;
+	top: -550px;
+	
+}
+.hidden-item.about-short-chef {
+	position: absolute;
+	top: -170px;
+}
+
+.hidden-text-container {
+	padding: 10px;
+}
+
+.fun-in-the-kitchen .featured-section-text-container {
+	transform: rotate(-2deg);
+}
+
+.choose-my-plate .featured-section-text-container {
+	transform: rotate(2deg);
+}
+
+.about-short-chef .featured-section-text-container {
+	transform: rotate(-2deg);
+}
+
+.featured-section .featured-section-item p {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	line-height: normal;
+}
+
+.featured-section .featured-section-item a, .featured-section .featured-section-item  p, .events-section .events-section-text-container p {
+	font-size: 20px;
+	color: #ffffff;	
+}
+
+
+/*****************************************   events   **********************************************************/
+.events-section {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.events-section h3 {
+	font-weight: normal;
+	color: #15b2c1;
+}
+
+.events-info {
+	height: 135px;
+	padding: 10px 10px 10px 15px;
+	border-radius: 30px;	
+	text-align: left;
+}
+
+.events-background-container {
+	display: none;
+	height: 141px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.events-info-container {
+	height: 141px;	
+}
+
+.events-background {
+	width: 100%;
+	height: 135px;
+	border-radius: 30px;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.events-news-item-wrapper {
+	margin-bottom: 25px;
+	border-radius: 30px;
+}
+
+.events-section .events-info-item h4 {
+	font-weight: bold;
+}
+
+.events-section .events-info-item p {
+    padding-bottom: 5px;	
+}
+
+.latest-event-wrapper {
+	padding-bottom: 10px;
+	border-radius: 30px;
+}
+
+.events-section-background-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.latest-event-wrapper-background {
+	width: 100%;
+	height: 200px;
+	border-radius: 30px;	
+	background-color: #cccccc;
+	background-image: url("../images/eventsImages/schoolVisit3.jpg");
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.event-1 {
+	background-image: url("../images/indexEventsImages/news1.jpg");	
+}
+
+.event-2 {
+	background-image: url("../images/indexEventsImages/news2.jpg");	
+}
+
+.event-3 {
+	background-image: url("../images/indexEventsImages/news3.jpg");	
+}
+
+.events-date {
+	font-size: 15px;
+	font-style: italic;
+}
+
+.events-section h3 {
+	text-align: center;
+}
+
+.events-section .right-col .latest-event-item {
+	position: relative;
+	top: -45px;
+	padding-left: 10px;
+    padding-right: 10px;
+	text-align: center;
+}
+
+.events-section .events-section-text-container {
+	width: 100%;
+	height: 100px;
+	transform: rotate(2deg);
+	border-radius: 30px;
+	box-shadow: 0 3px 2px 2px rgba(51, 51, 51, 0.5);
+	background-color: #15b2c1;
+}
+
+.events-section .events-section-text-container p {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+/*************************************   recipes   *******************************************************/
+.recipes-section {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #ffffff;
+}
+
+.recipes-section h2 {
+	padding-top: 0px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.recipes-section h4 {
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.recipes-section p {
+	padding-bottom: 0;
+}
+
+.recipe-row-1, .recipe-row-2, .recipe-row-3 {
+	position: relative;
+}
+
+.recipe-row-1 .recipe-1 .recipes-section-background-container {
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+.recipe-row-1 .recipe-2 .recipes-section-background-container {
+	padding-left: 70px;
+	padding-right: 20px;
+
+}
+
+.recipe-row-2 .recipe-3 .recipes-section-background-container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.recipe-info-item {
+
+}
+
+.recipe-info-3 .recipe-info-item {
+	
+}
+
+.recipe-row-2 .recipe-wrapper {
+	border-radius: 30px;
+}
+
+.recipe-1 .recipe-info-container {
+	padding-left: 10px;
+	padding-right: 50px;
+}
+
+.recipe-3 .recipe-info-container {
+	padding-left: 50px;
+	padding-right: 10px;
+	margin-top: -60px;
+}
+
+.recipe-info {
+	position: relative;
+	height: 120px;
+}
+
+.recipe-info.recipe-info-1 {
+    top: -90px;
+    left: 10px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	transform: rotate(-2deg);	
+	background-color: #ef8a1e;
+}
+
+.recipe-info.recipe-info-2 {
+	height: 80px;
+	transform: rotate(-2deg);
+}
+
+.recipe-info.recipe-info-3 {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: 0;
+	border-radius: 30px;
+	background-color: #ef8a1e;
+	transform: rotate(2deg) translateY(12px);
+}
+
+.recipe-row-1 .right-col .recipe-wrapper {
+	transform: rotate(-2deg);
+}
+
+.recipe-background {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.recipe-background-1 {
+	height: 240px;
+	margin-bottom: 30px;
+	border-radius: 30px;
+	background-image: url("../images/recipeImages/veggie-fried-rice1.jpg");	
+}
+
+.recipe-background-2 {
+	height: 180px;
+	margin-bottom: 0px;
+	border-radius: 30px;
+	background-image: url("../images/recipeImages/pbjOnARoll1.jpg");	
+	transform: rotate(-2deg);
+}
+
+.recipe-background-3 {
+	height: 240px;
+	border-radius: 30px;
+	background-image: url("../images/recipeImages/checkerboardSalad1.jpg");	
+	transform: rotate(2deg);
+}
+
+.recipes-section .see-more {
+	width: 180px;
+	height: 50px;
+	border: 3px solid #fdce0f;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-radius: 30px;
+	text-align: center;
+	background-color: #ef8a1e;
+}
+
+.recipes-section .see-more p {
+	padding-bottom: 0;
+}
+
+.recipes-section .see-more a {
+	color: #ffffff;
+}
+
+.kitchen-utensil-1 {
+	position: fixed;
+	left: 50%;
+	top: 5%;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	background-color: #00ccff;
+	background: url("../images/kitchenImages/plate.png") 50% 50% / contain no-repeat;
+}
+
+.kitchen-utensil-2 {
+	position: fixed;
+	left: 2%;
+	top: 32%;
+	width: 120px;
+	height: 120px;
+	border-radius: 60px;
+	background-color: #ffff99;
+	background: url("../images/KitchenImages/pan.png") 50% 50% / contain no-repeat;
+	transform: rotate(-80deg);
+}
+
+.kitchen-utensil-3 {
+	position: fixed;
+	left: 30%;
+	top: 55%;
+	width: 100px;
+	height: 190px;
+	border-radius: 80px;
+	background-color: #71bc78;
+	background: url("../images/KitchenImages/oven-mitt.png") 50% 50% / contain no-repeat;
+	transform: rotate(-35deg);
+}
+
+.kitchen-utensil-1, .kitchen-utensil-2, .kitchen-utensil-3 {
+	z-index: 99;
+}
+
+#coordinates {
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	width: 400px;
+	height: 200px;
+	background-color: gray;
+	color: black;
+	z-index: 101;
+}
+
+/* Make certain 'visual' elements in the recipes section 'stand out' so that the fixed element kitchen utensils can appear to slide out in front of them while simultaneously appearing in front of the 
+background and other section container elements that do not visually display anything and are effectively part of the background as far as the user is concerned. */
+.recipe-background-1, .recipe-info-1, .recipe-background-2, .recipe-info-2, .recipe-background-3, .recipe-info-3 {
+	position: relative;
+	z-index: 100;
+}
+
+
+/********************************************   short thoughts   ***************************************/
+.short-thoughts-section {
+	padding-top: 10px;
+	padding-bottom: 0px;
+	background-color: #ffffff;
+}
+
+.short-thoughts-section h2 {
+	color: #ef8a1e;
+}
+
+.short-thoughts-section .left-col {
+	padding-bottom: 20px;
+}
+
+.short-thoughts-news-item-wrapper {
+    min-height: 158px; 
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 0;
+	border-radius: 30px;
+	clear: both;
+}
+
+.short-thoughts-item-wrapper {
+	display: none;
+}
+
+.short-thoughts-background {
+	width: 100%;
+	min-height: 135px;
+	border: 3px solid #ef8a1e;	
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 30px;
+	background-size: cover;
+	background-position: 50% 0%;
+	background-repeat: no-repeat;
+}
+
+.short-thoughts-background.featured-photo {
+	width: 100%;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	border-radius: 0;	
+	background-image: url("../images/short-chef-with-apple-on-head.png");	
+}
+
+.short-thoughts-info {
+	height: 158px;
+	border-radius: 0 27px 27px 0;
+}
+		
+.short-thoughts-background a {
+	display: inline-block;
+	width: 100%;
+	min-height: 129px;
+	border-radius: 27px;	
+}
+
+.short-thoughts-info-content p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.short-thoughts-info-content a {
+	display: inline-block;
+	border-radius: 15px;
+}
+
+.short-thoughts-background-1 {
+	background-image: url("../images/indexEventsImages/news1.jpg");	
+	transform: rotate(2deg);
+}
+
+.short-thoughts-background-2 {
+	background-image: url("../images/indexEventsImages/news2.jpg");	
+	transform: rotate(-2deg);
+}
+
+.short-thoughts-background-3 {
+	background-image: url("../images/indexEventsImages/news3.jpg");
+	transform: rotate(2deg);
+}
+
+.short-thoughts-section .read-more-circle, .short-thoughts-section .read-more-text {
+	background-color: #ef8a1e;
+}
+
+/************************* END OF INDEX SPECIFIC STYLES ************************/
+
+
+
+/* General subpage only styles */
+.page-sub-header {
+	padding-bottom: 10px;
+	padding-left: 20px;
+	color: #15b2c1;	
+}
+
+.page-sub-header.row-one {
+	font-size: 20px;
+	padding-bottom: 0;
+}
+
+.page-sub-header.row-two {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
+#restaurantEatingGuide {
 	width: 80%;
 	max-width: 590px;
 	padding: 10px 0 10px 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #restaurantEatingGuide img {
@@ -519,298 +1417,526 @@ float: left;
 	max-width: 590px;
 }
 
-
-.foodList {
-padding: 10px 0 0 20px;
+.food-list {
+	padding: 20px 0 0 20px;
 }
 
-.foodList li {
+.food-list li {
 	list-style-type: none;
-	background: url(../images/strawberry.png) no-repeat 0 0;
 	padding-top: 3px;
 	padding-bottom: 10px;
+	padding-left: 40px;
 	line-height: 27px;
+	background: url(../images/strawberry.png) no-repeat 0 0;
 }
 
-.foodList li a {
+.food-list li a {
     font-size: 22px;
 	font-weight: bold;
-	padding-left: 40px;
 }
 
-.ingredientsList {
-	list-style-type: disc;
+.ingredients-list {
 	padding-left: 15px;
 }
 
-.ingredientsList li, .recipeDirections li {
+.ingredients-list li {
     padding-bottom: 6px;	
+	font-size: 18px;
+}
+
+.supporting-photo-container {
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+}
+
+.supporting-photo-container-with-caption {
+	padding-bottom: 20px;
+}
+
+.supporting-photo-container.about {
+	background: url(../images/short-chef-photo1.png) no-repeat 0 0;
+	max-width: 600px;
+	height: 600px;
+}
+
+.supporting-photo-container.veggie-fried-rice {
+	background: url(../images/recipeImages/veggie-fried-rice1.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.healthy-pineapple {
+	background: url(../images/recipeImages/healthy-pineapple1.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.strawberry-banana {
+	background: url(../images/recipeImages/an-image.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.apple-sandwich {
+	background: url(../images/recipeImages/appleSandwich1.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.herby-pasta {
+	background: url(../images/recipeImages/an-image.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.checkerboard-salad {
+	background: url(../images/recipeImages/checkerboardSalad1.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
+}
+
+.supporting-photo-container.pbj-on-a-roll {
+	background: url(../images/recipeImages/pbjOnARoll1.jpg) no-repeat 0 0;
+	max-width: 300px;
+	height: 300px;
+	transform: rotate(2deg);
 }
 
 
 
-.supportingPhotoContainer {
-margin-left: auto;
-margin-right: auto;
 
-	width: 100%;
-	height: 100%;
-			
-	min-width: 150px;
-	max-width: 400px;
-	padding-top: 10px;
-	
-}
 
-.supportingPhotoContainer img {
-	
-	width: 100%;
-	height: 100%;
-	padding-bottom: 5px;
-
-}
-
-.genericList {
-	list-style-type: disc;
+.generic-list {
 	padding-left: 20px;
+	list-style-type: disc;
+}
+
+.subpage-content-closing-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.subpage-content-closing-container p {
+	font-size: 28px;
+	text-align: center;	
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+/*Recipes pages*/
+.subheader-themed-container {
+	position: relative;
+	top: 18px;
+	left: -30px;
+	padding: 5px 30px 5px 30px;
+	border-radius: 20px;
+	background-color: #15b2c1;
+	box-shadow: 0 3px 2px 2px rgba(51, 51, 51, 0.5);
+	transform: rotate(-2deg);
+}
+
+.subheader-themed-container h3.major-subheading {
+	font-size: 30px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.subheader-themed-container.ingredients {
+	width: 232px;
+}
+
+.ingredients-container {
+    padding: 20px 15px 20px 15px;
+    border-radius: 30px;
+    background-color: #fdce0f;
+}
+
+.ingredients-inner-sub-container {
+	max-width: 650px;
+	min-height: 28px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.subpage-content .right-col {
+	margin-left: 0;	
+	transform: rotate(0deg);
+}
+
+.instructions-container {
+	min-height: 68px;
+    padding: 20px 30px 20px 30px;
+	margin-bottom: 60px;
+    border-radius: 30px;
+    background-color: #fdce0f;
+}
+
+.instructions-container:nth-of-type(2n+1){
+	transform: rotate(-1deg);
+}
+
+.instructions-container:nth-of-type(2n+2){
+	transform: rotate(0.5deg);
+}
+
+.instructions-inner-sub-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.step-container {
+	margin-top: -45px;
+	text-transform: uppercase;
+}
+
+.step-container .step-number {
+	font-size: 28px;
+	color: #ffffff;
+}
+
+.instructions-item {
+	font-size: 18px;
+}
+
+.instructions-content h3 {
+	text-align: center;
+}
+
+.instructions-content h3.major-subheading {
+	padding-bottom: 40px;
+}
+
+.ingredients-content, .instructions-content {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+
+/*Contact page styles*/
+#contactFormContainer label {
+	font-weight: bold;
+}
+
+#clientSideValidationFeedback {
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+
+/* 404, 500 pages */
+#heroImageContainer.alternate-hero {
+    width: 40%; 
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../images/404-short-chef-hero-image.png");
+	background-size: contain;
 }
 
 
 
-/* Mobile styles */
 
-#bodyWrapper{
+
+/********************************   Phone Horizontal Landscape Mode Styles *************************************/
+@media only screen and (min-width: 500px){
+	
+#bodyWrapper {
 	width: 100%;
 }
 	
-	#titleContainer{
-padding-left: 85px;
-	}
+h2 {
+	font-size: 36px;	
+}
 	
-h1 a:link, a:visited {
+h3 {
 	font-size: 32px;
 }
 	
-
-
-
-
-header{
-	min-height: 100px;
-}
-
-#logo {
-	float: left;
-	padding-top: 5px;
-    padding-right: 5px;
-
-}
-
-#logo img {
-	height: 90px;
-}
-
-
-	
-footer {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-footer p {
-	
-}
-	
-#subscribeModal {
-
-position: fixed;
-	top: 30px;
-
-	margin-left: 10%;
-	overflow: auto;
-	width: 80%;
-
-}	
-
-#heroImageContainer.alternateHero  {
-	width: 100%;
-}
-
-
-
-
-
-
-/* Tablet styles */
-@media only screen and (min-width: 500px){
-	
-	#bodyWrapper{
-		width: 100%;
-	}
-	
-
-	
-	h1 a:link, a:visited {
-		font-size: 56px;
-		/* text-shadow: 2px 1px #000000; */
-
-	}
-	
-	h1 sup {
-		font-size: 18px;
-	}
-	
-	#titleContainer{
-		padding-top: 40px;
-	    padding-left: 170px;
-	}
-	
-	header p {
-		font-size: 22px;
-		text-shadow: 1px 1px #000000;
-}
-	
-	
-	h2 {
-		font-size: 32px;
-		
-	}
-	
-	h3 {
-		font-size: 28px;
-	}
-	
-	#logo {
+.logo {
 	padding-top: 23px;
 	padding-left: 10px;
 }
 	
-	header {
-	     height: 200px;
-		 padding-bottom: 0px;
-	}
-	
+.title-container {
+	padding-left: 87px;
+}
 
+nav a {
+	padding-left: 9px;	
+}
+
+nav {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+}
+
+#modalLogo img {
+	height: 150px;
+}	
+	
+}
+
+
+
+
+
+/************************************** Certain Tablet styles only take effect above a certain width. ***************************/
+@media only screen and (min-width: 700px){
+
+nav a {
+	padding-left: 15px;
+	font-size: 18px;
+}
+
+.logo, .title-container {
+	top: -15px;
+}
+
+.logo {
+	width: 203px;
+	height: 150px;
+	margin-left: 100px;
+	margin-right: 0;
+}
+
+.index-row h2 {
+	text-align: center;
+}
+
+.index-row h2, h3.major-subheading {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-size: 56px;
+	text-transform: uppercase;
+}
+
+/*Title container */
+.title-container {
+	padding-left: 0px;
+	padding-top: 15px;
+	margin-left: 100px;
+	margin-right: 0;
+	text-align: left;
+}
+
+.title-container p {
+	line-height: 16px;
+}
+
+.title-container .title-line-1 {
+	font-size: 24px;
+}
+
+.title-container .title-line-2 {
+	font-size: 20px;
+}
+
+
+/*Hero image */
+#heroImageText h3 {
+	font-size: 28px;
+}
+
+#heroImageContainer.alternate-hero {
+	width: 350px;
+}
+
+#heroImageText {
+	float: right;
+	padding-top: 20px;
+	margin-right: 50px;
+}
+
+
+/*Nav menu styles */
 #mobileNav {
 	display:none;
 }
 
 #desktopNav {
 	display: block;
+	padding-left: 2%;
+}
+
+
+/* Footer styles */
+.footer-nav.mobile-nav {
+	display: none;
 }
 	
-nav a {
-	padding-left: 9px;
-	
+.footer-nav.desktop-nav {
+	display: block;
+}	
+
+/* Read more */
+.featured-section {
+	height: 411px;
+}
+
+.hidden-item-wrapper {
+	top: -170px;
+	overflow: auto;
+}
+
+.hidden-item.fun-in-the-kitchen, .hidden-item.choose-my-plate, .hidden-item.about-short-chef {
+	position: static;
+}
+
+/* events */
+
+.events-info {
+	background-color: #fdce0f;
 }
 
 
-
-nav {
-	padding-top: 10px;
-	padding-bottom: 14px;
-	padding-left: 0px;
+/***************   short chef gif    **************************/
+.short-chef-gif-container {
+    display: block;
+	height: 230px;
+    margin-top: 20px;
 }
 
-#modalLogo img {
-	height: 150px;
-}
-	
-	
-}
-
-/* Certain Tablet styles only take effect above a certain width. */
-@media only screen and (min-width: 700px){
-nav {
-
+.short-chef-gif-inner-container {
+    width: 225px;
+	height: 225px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-
-nav a {
-	padding-left: 25px;
-	text-shadow: 2px 1px #224455; 
-	font-size: 18px;
-}
-
-
-
-.newsImgDiv {
-	float: left;
-	max-width: 120px;
-	padding: 0 10px 5px 0;
-}
-
-.contentRow {
-	
+.short-chef-gif-container img {
+	display: block;	
 	width: 100%;
-	box-sizing: border-box;
-display: table;
+	height: 200px;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.short-chef-gif-container #logoGif {
+	display: none;
 }
 
 
-.content4 {
-
-	width: 33.3%;
-	padding: 10px;
-		
-	box-sizing: border-box;
-
-display: table-cell;
-vertical-align: top;
+/* Index page general styles */
+.index-row h3 {
+	padding-bottom: 30px;
+	font-size: 32px;
 }
 
 
-.content8 {
+/* read-more */
+.featured-section-wrapper .hidden-item {
+	position: absolute;
+	top: 265px;
+	max-width: 340px;
+}
 
-	width: 66.7%;
-	padding: 10px;
+
+/*Index page content subsections */
+
+.kitchen-utensil-1 {
 	
-	box-sizing: border-box;
-
-	display: table-cell;
-	vertical-align: top;
 }
 
-.newsTextDiv h4 {
-	text-align: left;
+.kitchen-utensil-2 {
+	
 }
 
-.supportingPhotoContainer {
+.kitchen-utensil-3 {
+	
+}
+
+.recipe-row-2 .recipe-3 .recipes-section-background-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.recipe-row-1 .recipe-2 {
 	float: right;
-	padding: 10px 0 10px 10px;
 }
 
-.contentContainerSupporting {
-	min-height: 420px;
+.recipe-background-3 {
+	border-radius: 30px 0 0 30px;
 }
 
-#heroImageContainer.alternateHero {
-	width: 350px;
+.recipe-info.recipe-info-3 {
+	width: 100%;
+	height: 240px;
+	margin-left: 0;
+	margin-right: 0;
+	border-width: 3px 3px 3px 0;
+	border-radius: 0px 30px 30px 0px;
+}
+
+.recipe-3 .recipe-info-container {
+	padding-left: 0px;
+	padding-right: 15px;
+	margin-top: 0px;
+}
+
+.short-thoughts-section .left-col {
+	padding-bottom: 0px;
+}
+
+.short-thoughts-section .right-col {
+	padding-left: 0;
+	margin-left: -10%;
+}
+
+.short-thoughts-item-wrapper {
+	display: block;
+}
+
+.supporting-photo-container-with-caption {
+	padding-bottom: 50px;
+}
+
+
+/* Subpage styles */
+.page-sub-header {
+	padding-bottom: 20px;
+	padding-left: 40px;
+}
+
+.page-sub-header.row-one {
+	font-size: 24px;
+	color: #000000;
+}
+
+.page-sub-header.row-two {
+	padding-bottom: 40px;
 }
 
 }
 
-/*Desktop Styles */
-@media only screen and (min-width: 1199px){
+
+
+
+
+/******************************   Desktop Styles   *****************************************/
+@media only screen and (min-width: 1200px){
 
 #bodyWrapper {
+	width: 100%;
+	max-width: 1920px;
+}
+
+.inner-body-wrapper {
 	width: 1200px;
 }
 
-#indexContentContainer {
-	width: 1200px;
 
-}
-h1 a:link, a:visited {
-	font-size: 82px;
-}
-
-h1 sup {
-	font-size: 24px;
-}
-
+/* General styles */
 h2 {
-	font-size: 48px;
+	font-size: 64px;
 }
 
 h3 {
@@ -818,112 +1944,104 @@ h3 {
 }
 
 h4 {
-	font-size: 24px;
-}
-
-#logo {
-	padding-top: 35px;
-	padding-left: 80px;
-}
-
-#logo img {
-	height: 150px;
-}
-
-header {
-	height: 220px;
-    padding-bottom: 0px;
-}
-
-#titleContainer {
-	padding-top: 45px;
-	padding-left: 250px;
-}
-
-header p {
-	padding-top: 10px;
-
-		font-size: 36px;
-
-
-}
-
-nav {
-
-	padding-left: 70px;
-}
-
-nav a {
-	padding-left: 40px;
 	font-size: 20px;
 }
 
+.logo, .title-container  {
+    top: -15px;	
+}
 
-#shortChefGifContainer {
-	display: block;
-    width: 230px;
-	height: 230px;
-    margin-top: 20px;
-	float: right;
+.logo {
+	position: absolute;
+	left: 150px;
+	padding-left: 0;
+	padding-top: 0;
+	margin-left: 0px;
+}
+
+.title-container {
+	padding-top: 165px;
+	margin-left: 150px;
+	margin-right: 0;
+	text-align: left;
 }
 
 
-#shortChefGifInnerContainer {
-    width: 225px;
-	height: 225px;
+/* Navbar styles */
+nav a {
+	padding-left: 30px;
+	font-size: 20px;
 }
 
-#shortChefGifContainer img {
-	width: 100%;
-height: 200px;
+#desktopNav {
+	padding-left: 350px;
 }
 
-#shortChefGifContainer #logoGif {
-	display: none;
+
+/*Breadcrumbs styles */
+.breadcrumbs {
+	padding-left: 0;
 }
 
+
+/* Hero image styles */
 #heroImageContainer {
-	height: 400px;
-	
-	
+	min-height: 300px;
 }
 
-.contentRow {
-	width: 1200px;
-
+#heroImageContainer.index-hero-image-background {
+	min-height: 550px;
 }
-.content4 {
 
+#heroImageContainer.alternate-hero {
 	width: 400px;
-	
 }
 
-.content8 {
-	width: 800px;
+.heroImageTextIndex h2 {
+	font-size: 42px;
 }
 
+#heroImageText {
+	padding-top: 30px;	
+	margin-right: 100px;
+}
+
+#heroImageText h3 {
+	font-size: 30px;
+}
+
+
+/* Footer styles */
+footer .inner-body-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+footer .logo {
+	width: 271px;
+	height: 200px;
+}
+
+
+/* Subscribe modal */
 #subscribeModal {
-position: fixed;
-	top: 100px;
-	margin-left: 200px;
-	
+    position: fixed;
+	width: 40%;
+	min-height: 624px; 
+	margin-left: 30%;
+	margin-right: 30%;
 	overflow: auto;
-	width: 800px;
-
-}
-
-#heroImageContainer.alternateHero {
-	width: 400px;
 }
 
 
-
+/*************************   avocado eye roll section   *********************************/
 #eyeContainer {
 	position: relative;
+	left: 80px;
+	top: 0px;
 	width: 140px;
 	height: 200px;
-	left: 688px; 
-	top: 157px;
+	margin-bottom: 50px;
 }
 
 #avocado {
@@ -932,32 +2050,31 @@ position: fixed;
 	top: 0px;
 	width: 140px;
 	height: 200px;
+	z-index: 10;
 	border-radius: 40px 40px 50px 50px;
 	background-image: url("../images/googleAssets/avo-eyeless.png");
 	background-size: cover;
 	background-position: center center;
-	z-index: 10;
 }
 
 #centerMarker {
+	visibility: hidden; 
 	position: absolute;
 	width: 1px;
 	height: 1px;
 	left: 65px; 
 	top: 100px; 
-	visibility: hidden; 
+	z-index: 20;
 	background-color: #0000ff;
-	z-index:20;
 }
-
 
 #eye1, #eye2 {
 	position: absolute;
 	width: 40px;
 	height: 50px;
+	z-index: 8;
 	border-radius: 10px;
 	background-color: #ffffff;
-	z-index: 8;
 }
 
 #eye1 {
@@ -974,17 +2091,301 @@ position: fixed;
 	position: absolute;
 	width: 20px;
 	height: 20px;
+	z-index: 9;
 	background-image: url("../images/googleAssets/pupil.png");
 	background-position: center center;
 	background-size: contain;
 	background-repeat: no-repeat;
-    z-index: 9;
+}
+/*************************   end of avocado eye roll section   *********************************/
+
+
+
+/*************************************** INDEX PAGE SPECIFIC Desktop Styles here events, recipes, etc. *******************/
+
+/***********************   read more styles   **************************/
+.short-thoughts-section .read-more {
+	display: block;
+	padding-top: 10px;
+	padding-left: 135px;
+}
+
+
+/******************************   learn more section   ***************************************/
+.learn-more-wrapper {
+
+}
+
+
+/********************   featured section   ***************************************/
+.featured-section {
+	display: flex;
+	justify-content: center;
+	width: 1200px;
+	height: 448px;
+	margin-top: -100px;
+	border-radius: 30px;
+}
+
+.hidden-item-wrapper {
+	position: absolute;
+	top: 265px;
+	padding-right: 0px;
+}
+
+.featured-items-row {
+	padding-top: 40px;
+}
+
+.featured-section-wrapper, .hidden-item {
+	width: 380px;
+	padding: 0 20px 0 20px;
+}
+
+.featured-section-wrapper {
+	min-height: 408px;
+}
+
+.featured-section-item {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.featured-section-wrapper-background {
+	width: 100%;  
+	height: 360px;
+}
+
+.featured-section-text-container {
+	 position: relative; 
+	 top: -30px;
+}
+
+.featured-section .featured-section-item a, .events-section .events-section-text-container p {
+	font-size: 28px;
+}
+
+
+/*****************************************   events   **********************************************************/
+.events-section {
+	height: 550px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.events-info {
+	border: 0;
+	border-radius: 0 30px 30px 0;
+}
+
+.events-background-container {
+	display: block;
+	float: left;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.events-info-container {
+	float: left;
+	border: 0;
+}
+
+.events-background {
+	border-radius: 30px 0 0 30px;
+}
+
+.events-news-item-wrapper {
+	height: 141px;
+}
+
+.latest-event-wrapper {
+	position: relative;
+	height: 285px;
+	padding-bottom: 0;
+}
+
+.events-section-background-container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.latest-event-wrapper-background {
+	position: absolute;
+	left: 5%;
+	width: 90%;
+	height: 100%;
+}
+
+.events-section .right-col .latest-event-item {
+	top: 220px;
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+.events-section .right-col {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+/*************************************   recipes   *******************************************************/
+.recipes-section {
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+.recipe-wrapper {
+	height: 246px;
+}
+
+.recipe-row-1 {
+	height: 400px;
+}
+
+.recipe-row-2 {
+	height: 350px;
+	padding-right: 100px;
+}
+
+.recipe-row-3 {
+	height: 100px;
+}
+
+.recipe-row-1 .recipe-1 .recipes-section-background-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.recipe-row-1 .recipe-2 .recipes-section-background-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.recipe-row-1 .recipe-2 {
+	float: left;
+	width: 25%;
+	margin-left: 150px;
+}
+
+.recipe-info {
+	margin-bottom: 0px;
+}
+
+.recipe-3 .recipe-info-container {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 0px;
+}
+
+.recipe-info.recipe-info-1 {
+	position: relative;
+	top: 150px;
+	left: -200px;
+	width: 300px;
+}
+
+.recipe-info.recipe-info-3 {
+	height: 240px;
+	border-width: 3px 3px 3px 0;
+	border-radius: 0 30px 30px 0;
+	background: linear-gradient(#ef8a1e, #fdce0f);
+}
+
+.recipe-background {
+	margin-bottom: 0px;
+}
+
+.recipes-section .see-more {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.kitchen-utensil-1 {
+	left: 70%;
+	
+	width: 140px;
+	height: 140px;
+}
+
+.kitchen-utensil-2 {
+	left: 18%;
+	
+	width: 250px;
+	height: 250px;
+}
+
+.kitchen-utensil-3 {
+	left: 61%;
+    top: 55%;
+	width: 250px;
+	height: 405px;
+}
+
+
+/********************************************   short thoughts   ***************************************/
+.short-thoughts-section {
+	padding-top: 50px;
+	padding-bottom: 0px;
+}
+
+.short-thoughts-section h2 {
+	padding-bottom: 50px;
+}
+
+.short-thoughts-background {
+	width: 100%;
+	max-width: none;
+}
+
+.short-thoughts-background.featured-photo {
+	width: 80%;
+	height: 550px;
+	margin-left: 0;
+	margin-right: 0; 
+	margin-bottom: 0px;
+}
+
+.events-section .right-col {
+	padding-left: 50px;
+}
+
+.short-thoughts-section .right-col {
+	padding-left: 50px;
+	margin-left: 0;
+}
+
+.short-thoughts-info-content p {
+	font-size: 20px;
+	line-height: 27px;
+}
+
+
+/* Subpage styles here */
+.subpage-content .right-col {
+	margin-left: -120px;	
+}
+
 }
 
 
 
 
 
+/*************************************** Large Desktop Styles ******************************************************/
+@media only screen and (min-width: 1499px){
 
+#desktopNav {
+	padding-left: 650px;
 }
 
+.logo {
+	left: 250px;
+	margin-left: 0px;
+}
+
+.title-container {
+	padding-left: 44px;
+	margin-left: 200px;
+}
+
+}
