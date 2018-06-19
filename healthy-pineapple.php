@@ -106,10 +106,9 @@
                </div>
             </div>
          </div>
-      </div>
-      <?php include 'assets/includePHP/events-components.php'; ?>
-      <?php include 'assets/includePHP/footer-components.php'; ?>
-      <?php include 'assets/includePHP/modal-components.php'; ?>
+         <?php include 'assets/includePHP/events-components.php'; ?>
+         <?php include 'assets/includePHP/footer-components.php'; ?>
+         <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

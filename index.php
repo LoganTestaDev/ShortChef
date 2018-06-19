@@ -37,7 +37,7 @@
                         <h3>Subscribe</h3>
                         <p>to our mailing list</p>
                      </div>
-					 <input id="signUpText" type="email" placeholder="Email">
+                     <input id="signUpText" type="email" placeholder="Email">
                      <div class="subscribe-button-container">
                         <button id="signUpButton" class="subscribe-button">Subscribe</button>
                      </div>
@@ -106,8 +106,9 @@
                   <div class="hidden-text-container">
                      <div class="hidden-text">
                         <p>Before you eat, think about what goes on your plate or in your cup or bowl.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.
-						Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.
-						Loreum ipsum dolor.  Enjoy!</p>
+                           Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.
+                           Loreum ipsum dolor.  Enjoy!
+                        </p>
                      </div>
                      <div class="read-more">
                         <div class="read-more-circle"></div>
@@ -222,7 +223,7 @@
                   <div class="content-med-12">
                      <div class="short-thoughts-background featured-photo"></div>
                   </div>
-				  <div class="clear-both"></div>
+                  <div class="clear-both"></div>
                </div>
                <div class="content-med-7 content-lar-6 right-col">
                   <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
@@ -295,7 +296,7 @@
                      </div>
                   </div>
                </div>
-			   <div class="clear-both"></div>
+               <div class="clear-both"></div>
             </div>
          </div>
          <div class="kitchen-utensil kitchen-utensil-1"></div>
