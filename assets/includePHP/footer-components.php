@@ -42,7 +42,7 @@
       </div>
       <div class="footer-social-elements content-lar-3">
          <div class="subscribe-button-container">
-            <button id="subscribeButton">Follow Us</button>
+            <button id="subscribeButton" class="subscribe-button">Follow Us</button>
          </div>
          <div id="socialIcons">
             <div class="socialIcons"><a href="https://www.facebook.com/shortchef2011?fref=ts" target="_blank"><img src="assets/images/socialMediaIcons/facebook-logo.png" alt="Facebook logo" /></a></div>

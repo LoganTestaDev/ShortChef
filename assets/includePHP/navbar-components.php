@@ -1,6 +1,6 @@
 <nav id="mobileNav">
    <div class="dropdown-area">
-      <div class="drop-button" onclick="toggleShowDropdownContent();">
+      <div class="drop-button" id="dropButton" onclick="toggleShowDropdownContent();">
       </div>
       <div class="dropdown-elements" id="navDropdown">
          <a href="index.php">Home</a>

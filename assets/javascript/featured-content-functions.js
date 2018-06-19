@@ -3,16 +3,11 @@
 function addActive(itemToChangeStatus){
 	theItem=itemToChangeStatus;
 	theItem.classList.add("active");
-
 }
 
 function removeActive(itemToChangeStatus){
 	theItem=itemToChangeStatus;
-	theItem.classList.remove("active");
-
-	
-	
-	
+	theItem.classList.remove("active");	
 }
 var hidden0=document.getElementsByClassName("hidden-item")[0];
 var hidden1=document.getElementsByClassName("hidden-item")[1];
@@ -45,15 +40,10 @@ featured2.addEventListener("mouseleave",  function(e){
 
 
 
-
 function determineAdditionalItemsIfOver(potentialItem, item, e){
-
 	itemToChangeStatus=potentialItem;
 	theItem=item;
-	
-	
-	
-	
+
 	var mouseX=e.clientX;
 	var mouseY=e.clientY;
 	
@@ -69,8 +59,4 @@ function determineAdditionalItemsIfOver(potentialItem, item, e){
 	if(overItem===false){
 		removeActive(itemToChangeStatus);
 	}
-	//alert("hidden1 x, y, width, height: " + hiddenX + " " + hiddenY + " " + hiddenWidth + " " + hiddenHeight);
-	
-	
-	
 }

@@ -5,7 +5,7 @@
 > There is a border-box applied so that width is calculated to include padding thus making it easier to determine element widths and change styles and layout.
 > This site uses a grid system to formate sections of the page in columns sitewide more easily.  It is explained in further detail later on. 
 > There are general styles.  Then there are more specific section and page styles.  
-> Then for several breakpoints these styles are partially/wholly overwritten to customize the site for larger width layouts.  Note: grid-base content styles are overriden in the grid section
+> Then for several breakpoints these styles are partially/wholly overwritten to customize the site for larger width layouts.  Note: grid-base content styles are overridden in the grid section
     width media queries too.  Note that while the site may determine most of the columns at say the phone-to-tablet breakpoint of content-med-n, most of the actual styles for page elements may actually occur in 
 	mobile and desktop but not in the intermediate tablet region.
 */
@@ -72,15 +72,49 @@ display as side by side columns.  This will be relatively uncommonly needed and 
 .content-sml-11 { width: 91.6666666667%; }
 .content-sml-12 { width: 100%; }
 
-/*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width  is above a certain value.  */
+.content-row-pad {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+/*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width is above a certain value.  */
 .content-row-pad > .content-sml-1, .content-row-pad > .content-sml-2, .content-row-pad > .content-sml-3, .content-row-pad > .content-sml-4, .content-row-pad > .content-sml-5, .content-row-pad > .content-sml-6, 
 .content-row-pad > .content-sml-7, .content-row-pad > .content-sml-8, .content-row-pad > .content-sml-9, .content-row-pad > .content-sml-10, .content-row-pad > .content-sml-11, .content-row-pad > .content-sml-12 {
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
+.content-container {
+	width: 100%;
+	max-width: 1200px;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+
+
+
+
+/*Use when you want to restrict part of the website to the 'standard' max width instead of going all the way to the edges of the screen.  That is, use it to keep an (invisible) wrapper around the content it surrounds
+rather than always extending to the edge of the screen by default */
+.inner-body-wrapper {
+	position: relative;
+	min-width: 290px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 @media only screen and (min-width: 700px) {	
+
+.content-container { 
+    padding-left: 15px;
+	padding-right: 15px;
+}
+
 .content-med-1 { width: 8.3333333333%; }
 .content-med-2 { width: 16.6666666667%; }
 .content-med-3 { width: 25%; }
@@ -96,10 +130,22 @@ display as side by side columns.  This will be relatively uncommonly needed and 
 
 /*These styles allow you to 'turn on' left and right padding for select content-rows that are immediate children of an outer div.  These settings only apply when the browser width  is above a certain value.  */
 .content-row-pad > .content-med-1, .content-row-pad > .content-med-2, .content-row-pad > .content-med-3, .content-row-pad > .content-med-4, .content-row-pad > .content-med-5, .content-row-pad > .content-med-6, 
-.content-row-pad > .content-med-7, .content-row-pad > .content-med-8, .content-row-pad > .content-med-9, .content-row-pad > .content-med-10, .content-row-pad > .content-med-11, .content-row-pad > .content-med-12 {
+.content-row-pad > .content-med-7, .content-row-pad > .content-med-8, .content-row-pad > .content-med-9, .content-row-pad > .content-med-10, .content-row-pad > .content-med-11, .content-row-pad > .content-med-12,
+.content-row-pad > .content-lar-1, .content-row-pad > .content-lar-2, .content-row-pad > .content-lar-3, .content-row-pad > .content-lar-4, .content-row-pad > .content-lar-5, .content-row-pad > .content-lar-6, 
+.content-row-pad > .content-lar-7, .content-row-pad > .content-lar-8, .content-row-pad > .content-lar-9, .content-row-pad > .content-lar-10, .content-row-pad > .content-lar-11, .content-row-pad > .content-lar-12 {
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+.content-container .content-row {
+	padding: 0 0 0 0;
+}	
+
+.inner-body-wrapper { 
+	padding-left: 20px; 
+	padding-right: 20px; 
+ }
+
 }
 
 
@@ -123,32 +169,22 @@ display as side by side columns.  This will be relatively uncommonly needed and 
 	padding-left: 10px;
 	padding-right: 10px;
 }
-}
 
 .content-container {
-	width: 100%;
-	max-width: 1200px;
-	display: flex;
-	flex-wrap: wrap;
-	background-color: #ffffff;
-	padding: 0px 10px 0px 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-@media only screen and (min-width: 1200px) {
-.content-container {
-	padding: 10px 0 10px 0;
 }
-}
-
 
 /* When you have multiple content-columns (as immediate sub-div children of .content-row, make the left most content column have 0 left padding and the right most have 0 right padding.  Thus
 we avoid duplicating any surrounding-divs padding like in content-container. */
 .content-row > div:first-child {
-	padding-left: 0px;
+
 }
 
 .content-row > div:last-child {
-	padding-right: 0px;
+
 }
 
 /* These two content-row styles allow elements inside the content row to display evenly spaced across the screen. */
@@ -157,15 +193,13 @@ we avoid duplicating any surrounding-divs padding like in content-container. */
 	 flex: 1 auto;
 } 
 
-.content-container .content-row:last-child{
-	padding: 0 0 0 0;
-} 
-
-@media only screen and (min-width: 700px) {
-	.content-container .content-row {
-	     padding: 0 0 0 0;
-    }	
+.content-container .content-row:after {
+	clear: both;
 }
+
+.content-container .content-row:last-child {
+
+} 
 /************************* End of GRID SYSTEM ************************************/
 
 
@@ -180,19 +214,20 @@ we avoid duplicating any surrounding-divs padding like in content-container. */
 	background-color: #ffffff;
 }
 
-/*Use when you want to restrict part of the website to the 'standard' max width instead of going all the way to the edges of the screen.  That is, use it to keep an (invisible) wrapper around the content it surrounds
-rather than always extending to the edge of the screen by default */
-.inner-body-wrapper {
-	position: relative;
-	min-width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
+
+
 
 
 /* Additional Customizations for this website */
+
+.content-container {
+	min-height: 320px;
+	margin-top: -320px;
+}
+
+.alternate-content-container {
+	margin-top: -180px;
+}
 
 p, li {
 	line-height: 22.4px;
@@ -212,7 +247,7 @@ a:link, a:visited {
 }
 
 a:hover {
-	color: #15b2c1;
+	color: #999;
 }
 
 ol {
@@ -220,6 +255,7 @@ ol {
 }
 
 audio {
+	width: 290px;
 	padding: 10px 0 10px 0;
 }
 
@@ -254,24 +290,34 @@ are not in the "flow" of the document anymore. */
 	font-weight: bold;
 }
 
+.generic-list {
+	padding-left: 20px;
+	list-style-type: disc;
+}
 
 /******************************* Start of general styles for site. *******************************************/
 header {
-	padding: 0 10px 0px 10px;
 	position: absolute;
 	width: 100%;
+}
+
+h1 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 30px;
+	color: #ffffff;
 }
 
 h2 {
 	padding-top: 5px;
 	padding-bottom: 5px;
-	font-size: 28px;
+	font-size: 24px;
 }
 
-h3 {
+h3, .description-subheader {
 	padding-top: 0px;
 	padding-bottom: 10px;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
@@ -289,8 +335,7 @@ footer {
 	min-height: 275px;
 	padding: 20px 10px 50px 10px;
 	border-top: 5px solid #ef8a1e;
-	background: #fdce0f;
-	background: linear-gradient(#fdce0f, #ef8a1e);
+	background: #fdce0f linear-gradient(#fdce0f, #ef8a1e);
 	clear: both;
 }
 
@@ -327,37 +372,57 @@ input[type=submit] {
 	background: linear-gradient(#009900, #006600);
 }
 
-input[type=submit]:hover, #subscribeButton:hover {
-	background: #15b2c1;
+input[type=submit]:hover, .subscribe-button:hover {
+	background: linear-gradient(#15b2c1, #15b2c1);
 }
 
-#heroImageText h2, footer .title-container p {
+#heroImageText h1, footer .title-container p {
 	text-shadow: 1px 1px 2px rgba(51, 51, 51, 0.8);
 }	
 
 h1, h2, nav a, footer .title-container p, .learn-more-wrapper p, .featured-section-text-container a, .events-section h3, .events-section .events-section-text-container p, 
-.recipes-section h3, .recipes-section h4, .read-more-text p, .recipes-section a, 
-.page-sub-header.row-two, h3.major-subheading,
+.recipes-section h3, .recipes-section h3, .read-more-text p, 
+.sign-up-container h3,
+.see-more a,
+.page-sub-header.row-two, h2.major-subheading, h3.major-subheading,
 .step-number,
-.subpage-content-closing-container p {
+.subject-container .subject-info-container h3,
+.subpage-content-closing-container p,
+.instructions-content.subsection-content-items h3,
+.number-disc-item {
 	font-family: 'Luckiest Guy', cursive, Arial, Helvetica, sans-serif;
+	font-weight: normal;
 }
 
 .spiral-background {
-	background-image: url("../images/blue-radial-background.jpg");
+	background: url("../images/blue-wood-background.jpg") no-repeat 50% 50%;
 	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 }
 
-.featured-section .featured-section-item, .events-section .events-section-text-container p, .events-section h3, .recipes-section h2, .recipes-section h4, .short-thoughts-section h2,
-.page-sub-header.row-two, h3.major-subheading,
+h1, h2, .featured-section .featured-section-item, .events-section .events-section-text-container p, .events-section h3, .recipes-section h2, .recipes-section h3, .short-thoughts-section h2,
+.page-sub-header.row-two, h2.major-subheading, h3.major-subheading,
+.sign-up-container h3,
 .step-number,
-.subpage-content-closing-container p {
+.subject-container .subject-info-container h3,
+.subpage-content-closing-container p,
+.instructions-content.subsection-content-items h3,
+.number-disc-item {
 	text-shadow: 0 2px rgba(51, 51, 51, 0.8);
 }
 
-.index-row h2, h3.major-subheading {
+#restaurantEatingGuide .number-disc {
+	box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.index-row h2 {
+	text-align: center;
+}
+
+.page-sub-header {
+	color: #ffffff;
+}
+
+h1, .index-row h2, h2.major-subheading {
 	font-size: 36px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -370,6 +435,10 @@ h1, h2, nav a, footer .title-container p, .learn-more-wrapper p, .featured-secti
 	color: #ffffff;
 }
 
+.alternate-content-container h1 {
+	color: #999999;
+}
+
 /* Sitewide navbar */
 nav {
 	padding: 10px 5px 10px 5px;
@@ -379,7 +448,6 @@ nav {
 
 nav a {
 	display: inline;
-	font-weight: bold;
 	font-size: 16px;
 }
 	
@@ -401,36 +469,54 @@ nav a:hover {
 	border: none;
 	outline: none;
 	background-color: inherit;
-	background: url("../images/hamburger-menu.png");
+	background: url("../images/hamburger-menu.png") no-repeat 50% 50%;
 	background-size: cover;
-	background-repeat: no-repeat;
+	
+}
+
+.show-drop-button {
+	height: 60px;
+	background: url("../images/hamburger-top.png") no-repeat 50% 13%, url("../images/hamburger-middle.png") no-repeat 50% 67%, url("../images/hamburger-bottom.png") no-repeat 50% 100%;	
 }
 
 .dropdown-elements {
-    display: none;
+	opacity: 0;
+    transition: all 1s 0s; 
 }
 
 .dropdown-elements a {
-   display: block;
-   padding-left: 30px;
-   padding-top: 20px;
-   font-size: 20px;
+    display: block; 
+    padding-left: 30px;
+    padding-top: 0px;
+    line-height: 0;
+    font-size: 20px;
+    transition: all 1s 0.2s; 
 }
 
 .show-dropdown-content {
 	display: block;
+	padding-bottom: 40px;
+	height: auto;
+	opacity: 1;
+}
+
+.show-dropdown-content a {
+	padding-top: 20px;
+	line-height: normal;
 }
 
 #desktopNav {
 	display: none;
 }
 
+.page-header-container {
+	width: 100%;
+}
 
 /*breadcrumbs */
 .breadcrumbs {
 	padding-top: 10px;
-	padding-bottom: 0;
-	padding-left: 10px;
+	padding-bottom: 10px;
 }
 
 .breadcrumbs-nav li {
@@ -440,13 +526,13 @@ nav a:hover {
 }
 
 .breadcrumbs-nav li a {
-	color: #256f92;
+	color: #000000;
 	font-weight: bold;
 }
 
 .breadcrumbs-nav li:after {
 	content: " > ";
-	color: #256f92;
+	color: #000000;
 	padding-left: 5px;
 	padding-right: 5px;
 }
@@ -458,11 +544,9 @@ nav a:hover {
 
 /* Hero image styles */
 #heroImageContainer {
-	min-height: 400px;
-	background-image: url("../images/short-chef-hero-image.jpg");
-	background-position: center 30%;
+	min-height: 420px;
+	background: url("../images/heroImages/blue-radial-background.jpg") no-repeat 50% 30%;
 	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 #heroImageContainer.hide-bottom-boundary {
@@ -470,7 +554,7 @@ nav a:hover {
 }
 
 #heroImageContainer.index-hero-image-background {
-	background-image: url("../images/short-chef-hero-image.jpg");	
+	background-image: url("../images/heroImages/short-chef-hero-image.jpg");	
 }
 
 #heroImageContainer.about-hero-image-background {
@@ -479,25 +563,30 @@ nav a:hover {
 
 #heroImageText {
 	padding-top: 115px;
+	padding-bottom: 15px;
 }
 
-#heroImageText h2, #heroImageText h3 {
+#heroImageText h1, #heroImageText h2 {
 	text-align: center;
 }
 
-#heroImageText h2 {
+#heroImageText h1 {
 	padding-top: 0;
 	padding-bottom: 0;
 	font-weight: normal;
 	color: #ffffff;
 }
 
-#heroImageText h2:nth-of-type(2){
+#heroImageText .header-alternate, .header-alternate {
 	color: #fdce0f;
 }
-	
-#heroImageText h3 {
+		
+#heroImageText h2 {
+	padding-top: 0;
+	padding-bottom: 10px;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-size: 20px;
+	font-weight: bold;
 	color: #000000;
 }	
 
@@ -506,9 +595,7 @@ nav a:hover {
 .title-container {
 	width: 300px;
 	padding-top: 12px;
-	padding-left: 87px;
-	margin-left: auto;
-	margin-right: auto;
+	text-align: center;
 }
 
 .title-container p {
@@ -529,17 +616,15 @@ nav a:hover {
 .logo, .title-container {
 	position: relative;
 	top: -45px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .logo {
 	width: 122px;
-	height: 90px;
-	margin-left: auto; 
-	margin-right: auto; 
-	background-image: url("../images/short-chef-logo-with-text.png");
+	height: 90px;	
+	background: url("../images/short-chef-logo-with-text.png") no-repeat 50% 50%;
 	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 }
 
 .logo a {
@@ -631,7 +716,7 @@ nav a:hover {
 
 
 /* Footer styles */
-#subscribeButton {
+.subscribe-button {
 	padding: 10px 15px 10px 15px;	
 	border-radius: 10px;
 	border: 0;
@@ -664,7 +749,7 @@ nav a:hover {
 	border-radius: 5px;
 }
 
-#socialIcons img:hover, #subscribeButton:hover{
+#socialIcons img:hover, .subscribe-button:hover{
 	box-shadow: 0 0 5px 5px #fefefe;
 	transition: 0.5s;
 }
@@ -684,10 +769,8 @@ footer .logo {
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: url(../images/short-chef-logo-white-text.png);
-    background-size: contain;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+	background: url(../images/short-chef-logo-white-text.png) no-repeat 50% 50%;
+	background-size: contain;
 }
 	
 footer .title-container {
@@ -747,6 +830,27 @@ footer .title-container p {
 	padding: 0;
 }
 
+/* see-more */
+.see-more {
+	width: 180px;
+	height: 50px;
+	border: 3px solid #fdce0f;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	text-align: center;
+	background-color: #ef8a1e;
+}
+
+.see-more p {
+	padding-bottom: 0;
+}
+
+.see-more a {
+	color: #ffffff;
+}
 
 
 /********************************************** BEGINING OF INDEX SPECIFIC STYLES *****************************************************/
@@ -802,6 +906,45 @@ footer .title-container p {
 	font-weight: normal;
 }
 
+/* sign-up */
+.sign-up-container {
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #ef8a1e;
+}
+
+.sign-up-inner-container {
+    width: 80%;	
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.sign-up-container h3 {
+	padding-bottom: 0;
+	color: #ffffff;
+}
+
+.sign-up-container p {
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.sign-up-container input {
+	width: 85%;
+	border: 0;
+	border-radius: 30px;
+	box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.2) inset;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.sign-up-container .subscribe-button {
+	width: 75%;
+	border-radius: 30px;
+}
+
 
 /******************************   learn more section   ***************************************/
 .learn-more-wrapper {
@@ -830,8 +973,7 @@ footer .title-container p {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
-	background-color: #fdce0f; 
-	background: linear-gradient(#fdce0f, #ef8a1e);   
+	background: #fdce0f linear-gradient(#fdce0f, #ef8a1e);   
 }
 
 .featured-items-row {
@@ -852,41 +994,30 @@ footer .title-container p {
 }
 
 .featured-section-wrapper-background {
-	height: 340px;
+	height: 200px;
 	border-radius: 30px;	
-	background-color: #cccccc;
+	background: no-repeat 50% 50%;
 	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 	transition: height 0.8s linear;
 }
 
 .fun-in-the-kitchen .featured-section-wrapper-background {
-	background-image: url("../images/short-chef-throwing-spaghetti-squash.png");
+	background-image: url("../images/indexImages/short-chef-school-event.jpg");
 }
 
 .choose-my-plate .featured-section-wrapper-background {
-	background-image: url("../images/myplate1.jpg");
+	background-image: url("../images/indexImages/fruits-and-veggies-plate.jpg");
 }
 
 .about-short-chef .featured-section-wrapper-background {
-	background-image: url("../images/short-chef-photo1.png");	
-}
-
-
-
-
-
-.featured-section-wrapper.active .featured-section-wrapper-background {
-	height: 200px;
-	transition: height 0.8s ease-out; 
+	background-image: url("../images/indexImages/short-chef-side-photo.jpg");	
 }
 
 .featured-section-text-container {
 	position:relative;
 	left: -6px;
-	top: -35px;
-	width: 104%;
+	top: -30px;
+	width: 102%;
 	z-index: 11;
 	border-radius: 20px;
 	background-color: #15b2c1;
@@ -920,6 +1051,12 @@ footer .title-container p {
 
 .hidden-item {
 	min-height: 50px;
+	max-height: 140px;
+	overflow-y: hidden;
+}
+
+.hidden-item:hover {
+	overflow-y: auto;
 }
 
 .hidden-text p {
@@ -928,17 +1065,17 @@ footer .title-container p {
 
 .hidden-item.fun-in-the-kitchen {
 	position: absolute;
-	top: -930px;
+	top: -915px;
 	
 }
 .hidden-item.choose-my-plate {
 	position: absolute;
-	top: -550px;
+	top: -535px;
 	
 }
 .hidden-item.about-short-chef {
 	position: absolute;
-	top: -170px;
+	top: -155px;
 }
 
 .hidden-text-container {
@@ -998,13 +1135,15 @@ footer .title-container p {
 	height: 141px;	
 }
 
-.events-background {
+.events-background, .subject-background {
 	width: 100%;
-	height: 135px;
 	border-radius: 30px;
+	background: no-repeat 50% 50%;
 	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
+}
+
+.events-background {
+	height: 135px;
 }
 
 .events-news-item-wrapper {
@@ -1034,23 +1173,16 @@ footer .title-container p {
 	width: 100%;
 	height: 200px;
 	border-radius: 30px;	
-	background-color: #cccccc;
-	background-image: url("../images/eventsImages/schoolVisit3.jpg");
+	background: #cccccc url("../images/indexEventsImages/short-chef-outdoor-event.jpg") no-repeat 50% 50%;
 	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 }
 
 .event-1 {
-	background-image: url("../images/indexEventsImages/news1.jpg");	
+	background-image: url("../images/indexEventsImages/kitchen-salad-prep.jpg");	
 }
 
 .event-2 {
-	background-image: url("../images/indexEventsImages/news2.jpg");	
-}
-
-.event-3 {
-	background-image: url("../images/indexEventsImages/news3.jpg");	
+	background-image: url("../images/indexEventsImages/girl-serving-plate-of-food.jpg");	
 }
 
 .events-date {
@@ -1099,7 +1231,9 @@ footer .title-container p {
 	color: #ffffff;
 }
 
-.recipes-section h4 {
+.index-row.recipes-section h3 {
+	padding: 5px 0 5px 0;
+	font-size: 20px;
 	font-weight: normal;
 	color: #ffffff;
 }
@@ -1120,20 +1254,11 @@ footer .title-container p {
 .recipe-row-1 .recipe-2 .recipes-section-background-container {
 	padding-left: 70px;
 	padding-right: 20px;
-
 }
 
 .recipe-row-2 .recipe-3 .recipes-section-background-container {
 	padding-left: 15px;
 	padding-right: 15px;
-}
-
-.recipe-info-item {
-
-}
-
-.recipe-info-3 .recipe-info-item {
-	
 }
 
 .recipe-row-2 .recipe-wrapper {
@@ -1178,7 +1303,7 @@ footer .title-container p {
 	margin-right: 0;
 	border-radius: 30px;
 	background-color: #ef8a1e;
-	transform: rotate(2deg) translateY(12px);
+	transform: rotate(2deg);
 }
 
 .recipe-row-1 .right-col .recipe-wrapper {
@@ -1213,24 +1338,8 @@ footer .title-container p {
 }
 
 .recipes-section .see-more {
-	width: 180px;
-	height: 50px;
-	border: 3px solid #fdce0f;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	border-radius: 30px;
-	text-align: center;
-	background-color: #ef8a1e;
-}
-
-.recipes-section .see-more p {
-	padding-bottom: 0;
-}
-
-.recipes-section .see-more a {
-	color: #ffffff;
 }
 
 .kitchen-utensil-1 {
@@ -1272,21 +1381,15 @@ footer .title-container p {
 	z-index: 99;
 }
 
-#coordinates {
-	display: none;
-	position: fixed;
-	top: 10%;
-	left: 10%;
-	width: 400px;
-	height: 200px;
-	background-color: gray;
-	color: black;
-	z-index: 101;
-}
 
 /* Make certain 'visual' elements in the recipes section 'stand out' so that the fixed element kitchen utensils can appear to slide out in front of them while simultaneously appearing in front of the 
 background and other section container elements that do not visually display anything and are effectively part of the background as far as the user is concerned. */
-.recipe-background-1, .recipe-info-1, .recipe-background-2, .recipe-info-2, .recipe-background-3, .recipe-info-3 {
+.recipe-background-1, .recipe-info-1, .recipe-background-2, .recipe-info-2, .recipe-background-3, .recipe-info-3,
+.events-section-text-container,
+.index-row h2,
+.recipe-3, 
+.recipes-section .see-more,
+.short-thoughts-background-1 {
 	position: relative;
 	z-index: 100;
 }
@@ -1296,6 +1399,8 @@ background and other section container elements that do not visually display any
 .short-thoughts-section {
 	padding-top: 10px;
 	padding-bottom: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
 	background-color: #ffffff;
 }
 
@@ -1327,9 +1432,8 @@ background and other section container elements that do not visually display any
 	margin-left: 5px;
 	margin-right: 5px;
 	border-radius: 30px;
+	background-position: 50% 0% no-repeat;
 	background-size: cover;
-	background-position: 50% 0%;
-	background-repeat: no-repeat;
 }
 
 .short-thoughts-background.featured-photo {
@@ -1365,17 +1469,17 @@ background and other section container elements that do not visually display any
 }
 
 .short-thoughts-background-1 {
-	background-image: url("../images/indexEventsImages/news1.jpg");	
+	background-image: url("../images/indexEventsImages/girl-serving-plate-of-food.jpg");	
 	transform: rotate(2deg);
 }
 
 .short-thoughts-background-2 {
-	background-image: url("../images/indexEventsImages/news2.jpg");	
+	background-image: url("../images/indexEventsImages/girl-serving-plate-of-food.jpg");	
 	transform: rotate(-2deg);
 }
 
 .short-thoughts-background-3 {
-	background-image: url("../images/indexEventsImages/news3.jpg");
+	background-image: url("../images/indexEventsImages/short-chef-outdoor-event.jpg");
 	transform: rotate(2deg);
 }
 
@@ -1388,24 +1492,66 @@ background and other section container elements that do not visually display any
 
 
 /* General subpage only styles */
-.page-sub-header {
+h1 {
 	padding-bottom: 10px;
-	padding-left: 20px;
-	color: #15b2c1;	
 }
 
-.page-sub-header.row-one {
-	font-size: 20px;
+h1.row-one {
+	/* font-size: 20px; */
 	padding-bottom: 0;
 }
 
-.page-sub-header.row-two {
+h1.row-two {
 	padding-top: 0px;
 	padding-bottom: 20px;
+	color: #ef8a1e;
+}
+
+.short-chef-reading-menu {
+	width: 100%;
+	height: 600px;
+	background-image: url("../images/short-chef-reading.png");
+	background-position: 50% 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.subject-container {
+	padding: 50px;
+	border-radius: 50px;
+	background-color: #15b2c1;
+}
+
+.subject-container-item-wrapper {
+	height: 150px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.subject-background-container {
+
+}
+
+.subject-container .subject-info-container h3 {
+	padding-bottom: 0;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.subject-container .subject-info-container p {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.subject-background {
+    height: 135px;	
+}
+
+.subject-info-container {
+	padding-left: 20px;
 }
 
 #restaurantEatingGuide {
-	width: 80%;
 	max-width: 590px;
 	padding: 10px 0 10px 0;
 	margin-left: auto;
@@ -1427,7 +1573,7 @@ background and other section container elements that do not visually display any
 	padding-bottom: 10px;
 	padding-left: 40px;
 	line-height: 27px;
-	background: url(../images/strawberry.png) no-repeat 0 0;
+	background: url(../images/strawberry.png) 0 0 no-repeat;
 }
 
 .food-list li a {
@@ -1439,7 +1585,7 @@ background and other section container elements that do not visually display any
 	padding-left: 15px;
 }
 
-.ingredients-list li {
+.ingredients-list ul li {
     padding-bottom: 6px;	
 	font-size: 18px;
 }
@@ -1455,68 +1601,67 @@ background and other section container elements that do not visually display any
 	padding-bottom: 20px;
 }
 
+.supporting-photo-container-with-caption img {
+	width: 100%;
+}
+
 .supporting-photo-container.about {
 	background: url(../images/short-chef-photo1.png) no-repeat 0 0;
 	max-width: 600px;
 	height: 600px;
 }
 
-.supporting-photo-container.veggie-fried-rice {
-	background: url(../images/recipeImages/veggie-fried-rice1.jpg) no-repeat 0 0;
-	max-width: 300px;
+.supporting-photo-container.choose-my-plate {
 	height: 300px;
+	background: url(../images/shortThoughtsImages/choose-my-plate.jpg) no-repeat 50% 50%;
+	transform: rotate(-0.5deg);
+}
+
+.ingredients-content .supporting-photo-container {
+	transform: rotate(-0.5deg);
+}
+
+.subject-container-item-wrapper:nth-of-type(2n+1) .subject-background {
+	transform: rotate(-2deg);
+}
+
+.subject-container-item-wrapper:nth-of-type(2n+0) .subject-background {
 	transform: rotate(2deg);
 }
 
-.supporting-photo-container.healthy-pineapple {
-	background: url(../images/recipeImages/healthy-pineapple1.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.veggie-fried-rice, .subject-background.veggie-fried-rice {
+	background: url(../images/recipeImages/veggie-fried-rice1.jpg) no-repeat 50% 50%;
+	background-size: cover;
 }
 
-.supporting-photo-container.strawberry-banana {
-	background: url(../images/recipeImages/an-image.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.healthy-pineapple, .subject-background.healthy-pineapple {
+	background: url(../images/recipeImages/healthy-pineapple1.jpg) no-repeat 50% 50%;
+	background-size: cover;
 }
 
-.supporting-photo-container.apple-sandwich {
-	background: url(../images/recipeImages/appleSandwich1.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.strawberry-banana, .subject-background.strawberry-banana {
+	background: url() no-repeat 50% 50%;
+	background-size: cover;
 }
 
-.supporting-photo-container.herby-pasta {
-	background: url(../images/recipeImages/an-image.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.apple-sandwich, .subject-background.apple-sandwich {
+	background: url(../images/recipeImages/appleSandwich1.jpg) no-repeat 50% 50%;
+	background-size: cover;
 }
 
-.supporting-photo-container.checkerboard-salad {
-	background: url(../images/recipeImages/checkerboardSalad1.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.herby-pasta, .subject-background.herby-pasta {
+	background: url() no-repeat 50% 50%;
+	background-size: cover;
 }
 
-.supporting-photo-container.pbj-on-a-roll {
-	background: url(../images/recipeImages/pbjOnARoll1.jpg) no-repeat 0 0;
-	max-width: 300px;
-	height: 300px;
-	transform: rotate(2deg);
+.supporting-photo-container.checkerboard-salad, .subject-background.checkerboard-salad {
+	background: url(../images/recipeImages/checkerboardSalad1.jpg) no-repeat 50% 50%;
+	background-size: cover;
 }
 
-
-
-
-
-.generic-list {
-	padding-left: 20px;
-	list-style-type: disc;
+.supporting-photo-container.pbj-on-a-roll, .subject-background.pbj-on-a-roll {
+	background: url(../images/recipeImages/pbjOnARoll1.jpg) no-repeat 50% 50%;
+	background-size: cover;
 }
 
 .subpage-content-closing-container {
@@ -1531,6 +1676,16 @@ background and other section container elements that do not visually display any
 	color: #ffffff;
 }
 
+.audio-item {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+
+
+
+
 /*Recipes pages*/
 .subheader-themed-container {
 	position: relative;
@@ -1543,17 +1698,22 @@ background and other section container elements that do not visually display any
 	transform: rotate(-2deg);
 }
 
-.subheader-themed-container h3.major-subheading {
+.subheader-themed-container h2.major-subheading {
 	font-size: 30px;
 	padding-top: 0;
 	padding-bottom: 0;
+	text-align: center;
 }
 
 .subheader-themed-container.ingredients {
-	width: 232px;
+	width: 235px;
 }
 
-.ingredients-container {
+.subheader-themed-container.instructions {
+	width: 256px;
+}
+
+.ingredients-container, .instructions-content  {
     padding: 20px 15px 20px 15px;
     border-radius: 30px;
     background-color: #fdce0f;
@@ -1602,25 +1762,59 @@ background and other section container elements that do not visually display any
 	color: #ffffff;
 }
 
+.instructions-content, .subject-container {
+	margin-bottom: 30px;
+}
+
+.instructions-content {
+	background-color: #fdce0f;
+}
+
 .instructions-item {
 	font-size: 18px;
 }
 
-.instructions-content h3 {
+.ingredients-content h2, .instructions-content h2 {
 	text-align: center;
 }
 
 .instructions-content h3.major-subheading {
-	padding-bottom: 40px;
+	/* padding-bottom: 40px; */
 }
 
 .ingredients-content, .instructions-content {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
+.instructions-content.subsection-content-items {
+	position: relative;
+	background: #fdce0f linear-gradient(#ef8a1e, #fdce0f); 
+}
 
-/*Contact page styles*/
+.number-disc {
+	position: absolute;
+	left: -20px;
+	top: -20px;
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	background-color: #15b2c1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.number-disc .number-disc-item {
+	color: #ffffff;
+	font-size: 24px;
+}
+
+.instructions-content.subsection-content-items h3 {
+	color: #ffffff;
+}
+
+/*Contact page styles */
 #contactFormContainer label {
 	font-weight: bold;
 }
@@ -1632,15 +1826,23 @@ background and other section container elements that do not visually display any
 
 
 /* 404, 500 pages */
-#heroImageContainer.alternate-hero {
-    width: 40%; 
+#heroImageContainer.alternate-hero-404 {
+    width: 40%;
+	max-width: 360px;	
 	margin-left: auto;
 	margin-right: auto;
-	background-image: url("../images/404-short-chef-hero-image.png");
+	background-image: url("../images/heroImages/404-short-chef-hero-image.png");
 	background-size: contain;
 }
 
-
+#heroImageContainer.alternate-hero-500 {
+    width: 40%;
+	max-width: 360px;	
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../images/heroImages/500-short-chef-hero-image.png");
+	background-size: contain;
+}
 
 
 
@@ -1650,22 +1852,22 @@ background and other section container elements that do not visually display any
 #bodyWrapper {
 	width: 100%;
 }
+
+h1 {
+	font-size: 36px;
+}
 	
 h2 {
-	font-size: 36px;	
+	font-size: 34px;	
 }
 	
 h3 {
-	font-size: 32px;
+	font-size: 28px;
 }
 	
 .logo {
 	padding-top: 23px;
 	padding-left: 10px;
-}
-	
-.title-container {
-	padding-left: 87px;
 }
 
 nav a {
@@ -1691,6 +1893,10 @@ nav {
 /************************************** Certain Tablet styles only take effect above a certain width. ***************************/
 @media only screen and (min-width: 700px){
 
+.content-container {
+	margin-top: -160px;
+}
+
 nav a {
 	padding-left: 15px;
 	font-size: 18px;
@@ -1698,20 +1904,17 @@ nav a {
 
 .logo, .title-container {
 	top: -15px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .logo {
 	width: 203px;
 	height: 150px;
-	margin-left: 100px;
 	margin-right: 0;
 }
 
-.index-row h2 {
-	text-align: center;
-}
-
-.index-row h2, h3.major-subheading {
+.index-row h2, h2.major-subheading {
 	padding-top: 10px;
 	padding-bottom: 20px;
 	font-size: 56px;
@@ -1720,10 +1923,7 @@ nav a {
 
 /*Title container */
 .title-container {
-	padding-left: 0px;
 	padding-top: 15px;
-	margin-left: 100px;
-	margin-right: 0;
 	text-align: left;
 }
 
@@ -1741,12 +1941,12 @@ nav a {
 
 
 /*Hero image */
-#heroImageText h3 {
-	font-size: 28px;
+#heroImageContainer {
+	min-height: 460px;	
 }
 
-#heroImageContainer.alternate-hero {
-	width: 350px;
+#heroImageText h2 {
+	font-size: 28px;
 }
 
 #heroImageText {
@@ -1767,6 +1967,14 @@ nav a {
 }
 
 
+/*Breadcrumbs styles */
+.breadcrumbs {
+	position: absolute;
+	top: -260px;
+	padding-left: 200px;
+}
+
+
 /* Footer styles */
 .footer-nav.mobile-nav {
 	display: none;
@@ -1776,9 +1984,14 @@ nav a {
 	display: block;
 }	
 
-/* Read more */
+/* Featured section */
 .featured-section {
 	height: 411px;
+}
+
+.featured-section-text-container {
+	width: 104%;
+	top: -35px;
 }
 
 .hidden-item-wrapper {
@@ -1831,6 +2044,10 @@ nav a {
 	font-size: 32px;
 }
 
+.index-row.recipes-section h3 {
+	padding-bottom: 0px;
+	font-size: 20px;
+}
 
 /* read-more */
 .featured-section-wrapper .hidden-item {
@@ -1839,21 +2056,33 @@ nav a {
 	max-width: 340px;
 }
 
+/* sign up */
+.sign-up-container {
+	position: absolute;
+	top: 220px;
+	width: 300px;
+	background: none;	
+}
+
+.sign-up-inner-container {
+	margin-left: 0;
+	margin-right: 0;
+	text-align: left;
+}
+
+.sign-up-container h3 {
+	color: #fdce0f;
+}
+
+.sign-up-container input {
+	width: 100%;
+}
+
+.sign-up-container .subscribe-button {
+	width: 90%;
+}
 
 /*Index page content subsections */
-
-.kitchen-utensil-1 {
-	
-}
-
-.kitchen-utensil-2 {
-	
-}
-
-.kitchen-utensil-3 {
-	
-}
-
 .recipe-row-2 .recipe-3 .recipes-section-background-container {
 	padding-left: 0;
 	padding-right: 0;
@@ -1876,10 +2105,23 @@ nav a {
 	border-radius: 0px 30px 30px 0px;
 }
 
+.recipe-background-3, .recipe-info.recipe-info-3 {
+	transform: none;
+}
+
+.recipe-3 {
+	transform: rotate(2deg);
+}
+
 .recipe-3 .recipe-info-container {
 	padding-left: 0px;
 	padding-right: 15px;
 	margin-top: 0px;
+}
+
+.short-thoughts-section {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .short-thoughts-section .left-col {
@@ -1899,21 +2141,25 @@ nav a {
 	padding-bottom: 50px;
 }
 
+.number-disc {
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+}
+
+.number-disc .number-disc-item {
+	font-size: 32px;
+}
 
 /* Subpage styles */
-.page-sub-header {
-	padding-bottom: 20px;
-	padding-left: 40px;
-}
+/* h1.row-one { */
+	/* font-size: 24px; */
+	/* color: #000000; */
+/* } */
 
-.page-sub-header.row-one {
-	font-size: 24px;
-	color: #000000;
-}
-
-.page-sub-header.row-two {
-	padding-bottom: 40px;
-}
+/* h1.row-two { */
+	/* padding-bottom: 40px; */
+/* } */
 
 }
 
@@ -1929,17 +2175,25 @@ nav a {
 	max-width: 1920px;
 }
 
+.content-container {
+	margin-top: -350px;
+}
+
 .inner-body-wrapper {
 	width: 1200px;
 }
 
 
 /* General styles */
-h2 {
-	font-size: 64px;
+h1 {
+    font-size: 56px;	
 }
 
-h3 {
+h2 {
+	font-size: 42px;
+}
+
+h3, .description-subheader {
 	font-size: 30px;
 }
 
@@ -1953,7 +2207,6 @@ h4 {
 
 .logo {
 	position: absolute;
-	left: 150px;
 	padding-left: 0;
 	padding-top: 0;
 	margin-left: 0px;
@@ -1961,8 +2214,6 @@ h4 {
 
 .title-container {
 	padding-top: 165px;
-	margin-left: 150px;
-	margin-right: 0;
 	text-align: left;
 }
 
@@ -1974,27 +2225,24 @@ nav a {
 }
 
 #desktopNav {
-	padding-left: 350px;
+	padding-left: 320px;
 }
 
 
 /*Breadcrumbs styles */
 .breadcrumbs {
-	padding-left: 0;
+	top: -300px;
+	padding-left: 200px;
 }
 
 
 /* Hero image styles */
 #heroImageContainer {
-	min-height: 300px;
+	min-height: 650px;
 }
 
 #heroImageContainer.index-hero-image-background {
 	min-height: 550px;
-}
-
-#heroImageContainer.alternate-hero {
-	width: 400px;
 }
 
 .heroImageTextIndex h2 {
@@ -2006,7 +2254,11 @@ nav a {
 	margin-right: 100px;
 }
 
-#heroImageText h3 {
+#heroImageText h1 {
+	font-size: 42px;
+}
+
+#heroImageText h2 {
 	font-size: 30px;
 }
 
@@ -2034,6 +2286,14 @@ footer .logo {
 }
 
 
+/*see more */
+.see-more {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 70px;
+}
+
+
 /*************************   avocado eye roll section   *********************************/
 #eyeContainer {
 	position: relative;
@@ -2052,9 +2312,8 @@ footer .logo {
 	height: 200px;
 	z-index: 10;
 	border-radius: 40px 40px 50px 50px;
-	background-image: url("../images/googleAssets/avo-eyeless.png");
+	background: url("../images/googleAssets/avo-eyeless.png") 50% 50% no-repeat;
 	background-size: cover;
-	background-position: center center;
 }
 
 #centerMarker {
@@ -2092,10 +2351,8 @@ footer .logo {
 	width: 20px;
 	height: 20px;
 	z-index: 9;
-	background-image: url("../images/googleAssets/pupil.png");
-	background-position: center center;
+	background: url("../images/googleAssets/pupil.png") 50% 50% no-repeat;
 	background-size: contain;
-	background-repeat: no-repeat;
 }
 /*************************   end of avocado eye roll section   *********************************/
 
@@ -2111,10 +2368,13 @@ footer .logo {
 }
 
 
-/******************************   learn more section   ***************************************/
-.learn-more-wrapper {
-
+/* sign-up */
+.sign-up-container {
+	top: 250px;
 }
+
+
+/******************************   learn more section   ***************************************/
 
 
 /********************   featured section   ***************************************/
@@ -2164,6 +2424,12 @@ footer .logo {
 .featured-section .featured-section-item a, .events-section .events-section-text-container p {
 	font-size: 28px;
 }
+
+.featured-section-wrapper.active .featured-section-wrapper-background {
+	height: 200px;
+	transition: height 0.8s ease-out; 
+}
+
 
 
 /*****************************************   events   **********************************************************/
@@ -2230,8 +2496,8 @@ footer .logo {
 
 /*************************************   recipes   *******************************************************/
 .recipes-section {
-	padding-top: 200px;
-	padding-bottom: 200px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .recipe-wrapper {
@@ -2295,21 +2561,18 @@ footer .logo {
 	margin-bottom: 0px;
 }
 
-.recipes-section .see-more {
-	margin-top: 0;
-	margin-bottom: 0;
+.ingredients-container, .instructions-content  {
+    padding: 65px 60px 65px 60px;
 }
 
 .kitchen-utensil-1 {
 	left: 70%;
-	
 	width: 140px;
 	height: 140px;
 }
 
 .kitchen-utensil-2 {
 	left: 18%;
-	
 	width: 250px;
 	height: 250px;
 }
@@ -2361,6 +2624,20 @@ footer .logo {
 
 
 /* Subpage styles here */
+
+.subject-container .subject-info-container h3 {
+	font-size: 32px;
+}
+
+.supporting-photo-container {
+	height: 500px;
+}
+
+.ingredients-content, .instructions-content {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
 .subpage-content .right-col {
 	margin-left: -120px;	
 }
@@ -2378,14 +2655,8 @@ footer .logo {
 	padding-left: 650px;
 }
 
-.logo {
-	left: 250px;
+.logo, .title-container  {
 	margin-left: 0px;
-}
-
-.title-container {
-	padding-left: 44px;
-	margin-left: 200px;
 }
 
 }

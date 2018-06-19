@@ -19,23 +19,25 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Short Chef Thoughts</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="short-thoughts.php">Short Thoughts</a></li>
-               <li><a href="eating-healthy-at-fast-food-restaurants.php">Eating Healthy at Restaurants</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
                <div class="content-med-12">
-                  <h3 class="page-sub-header major-subheading">How to maintain a healthy diet at a fast food restaurant...</h3>
+                  <div class="page-header-container">
+                     <h1>How to maintain a healthy diet at a fast food restaurant...</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="short-thoughts.php">Short Thoughts</a></li>
+                        <li><a href="eating-healthy-at-fast-food-restaurants.php">Eating Healthy at Restaurants</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
                   <p>Although fast food restaurants don't always offer us the healthiest of options, many people find that they have to eat fast food from time to time. Of course you do! 
                      They are not going to disappear; your kids are not going to forget they exist; not mine, for sure. So how can we make the most of a fast food meal? Below, we look at 
                      healthy fast food so that you can enjoy what you like.
@@ -48,26 +50,52 @@
                      Next time, ask for a grilled chicken sandwich but hold the mayonnaise; condiments are sometimes the difference between a healthy and unhealthy meal. Restaurants are 
                      now offering patrons alternatives salads with low calorie or fat free dressings; these are always a better choice.
                   </p>
-                  <h3 class="center-text">The following are SHORT CHEF GUIDES to eating out:</h3>
-                  <div id="restaurantEatingGuide">
-                     <img class="center-image" src="assets/images/restaurant1.jpg" alt="1: Portion Control" />
-                     <p>The most important process of healthy eating is Portion Control. If you do nothing else make this your "stick-to-it" law. Watch the sizes of the portions. If possible, 
-                        order a smaller or regular portion; NEVER THE GIANT or SUPER PORTION. Normally, a restaurant size portion is 2 to 3 times larger than what we would normally eat in at home.
-                     </p>
-                     <img class="center-image" src="assets/images/restaurant2.jpg" alt="2: Order Foods to Go" />
-                     <p>It is a fact that people tend to eat more when at a restaurant. If the temptation isn't in front of you, you are less likely to overindulge.</p>
-                     <img class="center-image" src="assets/images/restaurant3.jpg" alt="3: Try the Light Menu" />
-                     <p>Many restaurants indicate healthy choices on their menus and these are the ones that you SHOULD CONSIDER. Stay away from those attractive menu pictures with all the bad 
-                        things that are not part of your nutritional diet.
-                     </p>
+                  <p class="description-subheader center-text">The following are SHORT CHEF GUIDES to eating out:</p>
+                  <div class="content-row content-row-pad">
+                     <div class="content-med-4">
+                        <div class="short-chef-reading-menu">
+                        </div>
+                     </div>
+                     <div class="content-med-8">
+                        <div id="restaurantEatingGuide">
+                           <div class="instructions-content subsection-content-items">
+                              <div class="number-disc">
+                                 <div class="number-disc-item">1</div>
+                              </div>
+                              <h3>Portion Control</h3>
+                              <p>The most important process of healthy eating is Portion Control. If you do nothing else make this your "stick-to-it" law. Watch the sizes of the portions. If possible, 
+                                 order a smaller or regular portion; NEVER THE GIANT or SUPER PORTION. Normally, a restaurant size portion is 2 to 3 times larger than what we would normally eat in at home.
+                              </p>
+                           </div>
+                           <div class="instructions-content subsection-content-items">
+                              <div class="number-disc">
+                                 <div class="number-disc-item">2</div>
+                              </div>
+                              <h3>Order Foods to Go</h3>
+                              <p>It is a fact that people tend to eat more when at a restaurant. If the temptation isn't in front of you, you are less likely to overindulge.</p>
+                           </div>
+                           <div class="instructions-content subsection-content-items">
+                              <div class="number-disc">
+                                 <div class="number-disc-item">3</div>
+                              </div>
+                              <h3>Try the Light Menu</h3>
+                              <p>Many restaurants indicate healthy choices on their menus and these are the ones that you SHOULD CONSIDER. Stay away from those attractive menu pictures with all the bad 
+                                 things that are not part of your nutritional diet.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="clear-both"></div>
                   </div>
                   <p><strong>Healthy fast food eating is possible, what you need to do is look at the healthy alternatives available, as well as remember to keep the portions you eat normal.</strong></p>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

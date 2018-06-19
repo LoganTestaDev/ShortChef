@@ -19,23 +19,25 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Short Chef Thoughts</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="short-thoughts.php">Short Thoughts</a></li>
-               <li><a href="fun-in-the-kitchen.php">Fun in the Kitchen</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
                <div class="content-med-12">
-                  <h3 class="page-sub-header major-subheading">Fun in the Kitchen!</h3>
+                  <div class="page-header-container">
+                     <h1>Fun in the Kitchen!</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="short-thoughts.php">Short Thoughts</a></li>
+                        <li><a href="fun-in-the-kitchen.php">Fun in the Kitchen</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
                   <p>There's something cooking...</p>
                   <p>It's Ray Newlands, culinary teacher and chef extraordinaire. His skill with spatulas and sauté pans knows no bounds. Newlands, known as Short Chef 
                      by his students and other aficionados, has spent the greater part of his career cooking for others and teaching good culinary and eating habits. 
@@ -58,11 +60,13 @@
                   </p>
                   <p>By Rita Mayor, River Cities Gazette</p>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

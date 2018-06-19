@@ -19,23 +19,25 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Events</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="events.php">Events</a></li>
-               <li><a href="our-children-are-overweight.php">Our Children Are Overweight</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
-               <div class="content-med-8">
-                  <h3 class="page-sub-header major-subheading">Our Children are Overweight</h3>
+               <div class="content-med-12">
+                  <div class="page-header-container">
+                     <h1>Our Children are Overweight</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="events.php">Events</a></li>
+                        <li><a href="our-children-are-overweight.php">Our Children Are Overweight</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
                   <p>Recently it was reported that obesity among kids reached unprecedented levels, especially in the United States. Many experts believe that 15% of our children are overweight 
                      and that at least another 15% to 20% are at risk of becoming so.
                   </p>
@@ -59,11 +61,13 @@
                   </p>
                   <p><strong>Make a lifestyle change today!</strong></p>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

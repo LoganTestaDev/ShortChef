@@ -19,22 +19,24 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Contact Us!</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="contact-short-chef.php">Contact</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
-            <div class="content-row content-row-pad justify-center">
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
+                  <div class="page-header-container">
+                     <h1>Contact Us</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="contact-short-chef.php">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
                <div class="content-med-8" id="contactFormContainer">
-                  <h3 class="page-sub-header major-subheading">Contact Us</h3>
                   <form class="contactForm" id="contactForm" name="contactForm" method="post" onsubmit="return validateContactForm();" action="process-contact-form.php">
                      <label for="userFirstName">First Name</label>
                      <input type="text" id="userFirstName" name="userFirstName" placeholder="First Name" required="required">
@@ -54,6 +56,7 @@
                      <p>What should we make today?</p>
                   </div>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
          <?php include 'assets/includePHP/events-components.php'; ?>

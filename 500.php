@@ -18,13 +18,14 @@
       <div id="bodyWrapper">
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
-         <div id="heroImageContainer" class="alternate-hero hide-bottom-boundary"></div>
-         <div class="content-container inner-body-wrapper">
+         <div id="heroImageContainer" class="alternate-hero-500 hide-bottom-boundary"></div>
+         <div class="content-container inner-body-wrapper alternate-content-container">
             <div class="content-row content-row-pad">
                <div class="content-med-12">
-                  <h2 class="page-sub-header major-subheading">500: Server Error</h2>
+                  <h1>500: Server Error</h1>
                   <p><strong>Something went wrong on the server.  Sorry about that. Please go to one of the links above!</strong></p>
                </div>
+			   <div class="clear-both"></div>
             </div>
          </div>
          <?php include 'assets/includePHP/events-components.php'; ?>

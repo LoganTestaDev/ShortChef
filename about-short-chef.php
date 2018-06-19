@@ -19,22 +19,24 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Learn About Short Chef</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="about-short-chef.php">About</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
+               <div class="content-med-12">
+                  <div class="page-header-container">
+                     <h1>Learn About Short Chef</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="about-short-chef.php">About</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
                <div class="content-lar-8">
-                  <h3 class="page-sub-header major-subheading">Learn About Short Chef</h3>
                   <p><strong>Short Chef</strong> is a life-long culinary expert who has dedicated many years to educating kids about proper nutrition.</p>
                   <p><strong>Short Chef</strong> is leading the fight against obesity and diabetes in children, empowering them with knowledge to make better decisions to fuel their bodies with the best nutrition.  
                      Kids today can be in control of what they eat and drink. They need to develop good eating habits that lead to healthy conscious lifelong lifestyle choices, not settling for poor nutrition.
@@ -73,11 +75,14 @@
                   <div class="supporting-photo-container about">
                   </div>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

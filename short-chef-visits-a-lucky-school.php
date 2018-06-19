@@ -19,23 +19,25 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Events</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="events.php">Events</a></li>
-               <li><a href="short-chef-visits-a-lucky-school.php">Short Chef Visits a School</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
+               <div class="content-med-12">
+                  <div class="page-header-container">
+                     <h1>Short Chef Visits a Lucky School</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="events.php">Events</a></li>
+                        <li><a href="short-chef-visits-a-lucky-school.php">Short Chef Visits a School</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
                <div class="content-med-8">
-                  <h3 class="page-sub-header major-subheading">Short Chef Visits a Lucky School</h3>
                   <p>Team 1 held shiny yellow lemons in their fists and pumped them in the air. Not to be outdone, Team 2 showed off their cans of hearts of palm: "Look, look, we've got ours!" 
                      At just that moment, Team 3 came barreling down the aisle bearing plastic tins of organic field greens, and Team 4 rounded the corner with their cherry berry tomatoes. 
                      Cristopher, 10, held a papaya up for everyone to see.
@@ -118,11 +120,13 @@
                      </p>
                   </div>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

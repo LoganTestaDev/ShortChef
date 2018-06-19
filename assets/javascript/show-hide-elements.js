@@ -24,12 +24,14 @@ function determineBrowserWidthAndUpperLowerBounds () {
 
 	
 	if(browserWidth < 700) {
-		lowerBoundY = 2300;
+		lowerBoundY = 2500;
 		upperBoundY = 3200;
-		
+	} else if(700 <= browserWidth && browserWidth < 1200) {
+	    lowerBoundY = 1300;
+		upperBoundY = 2000;
 	} else {
 		lowerBoundY = 1450;
-        upperBoundY = 2200;
+        upperBoundY = 1750;
 	}
 }
 
@@ -87,7 +89,7 @@ function parallaxScroll() {
             var newkitchen2PosY = kitchen2PosY + diffY2;
             var newkitchen3PosY = kitchen3PosY + diffY3;
 
-            document.getElementById("coordinates").innerHTML = "kitchen1PosYStart, 2, 3: " + kitchen1PosYStart + ", " + kitchen2PosYStart + ", " + kitchen3PosYStart +
+            //document.getElementById("coordinates").innerHTML = "kitchen1PosYStart, 2, 3: " + kitchen1PosYStart + ", " + kitchen2PosYStart + ", " + kitchen3PosYStart +
                 "<br> lastWindowPosY " + lastWindowPosY +
                 "<br> scrolledFromLeft, scrolledFromTop " + scrolledFromLeft + ", " + scrolledFromTop + "<br> kitchen2PosY " + kitchen2PosY + "<br> scrollY: " + scrollY + "<br> diffY2 " + diffY2 +
                 "<br> newkitchen2PosY " + newkitchen2PosY;

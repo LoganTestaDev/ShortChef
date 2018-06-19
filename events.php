@@ -19,26 +19,28 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Events</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="events.php">Events</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
                <div class="content-med-12">
-                  <h3 class="page-sub-header major-subheading">Events</h3>
+                  <div class="page-header-container">
+                     <h1>Events</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="events.php">Events</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
                   <p><strong>More Events Coming Soon!</strong></p>
                   <br />
                   <br />
-                  <h3 class="page-sub-header major-subheading">Past News</h3>
+                  <h2 class="page-sub-header">Past News</h2>
                   <ul class="food-list">
                      <li>Molina Health Care Honors Short Chef with Community Champion Award (May 2013)</li>
                      <li><a href="short-chef-march-2013-interview.php">Short Chef on WLRN (Mar. 2013)</a></li>
@@ -49,6 +51,7 @@
                      <li><a href="our-children-are-overweight.php">Our Children are Overweight</a></li>
                   </ul>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
          <?php include 'assets/includePHP/events-components.php'; ?>

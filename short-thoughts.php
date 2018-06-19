@@ -19,33 +19,37 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Short Chef Thoughts</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="short-thoughts.php">Short Thoughts</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
                <div class="content-med-12">
-                  <h3 class="page-sub-header major-subheading">Short Chef Thoughts</h3>
+                  <div class="page-header-container">
+                     <h1>Short Chef Thoughts</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="short-thoughts.php">Short Thoughts</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
+               <div class="content-med-12">
                   <ul class="food-list">
                      <li><a href="eating-healthy-at-fast-food-restaurants.php">How to Eat Healthy at Fast Food Restaurants</a></li>
                      <li><a href="fun-in-the-kitchen.php">Fun in the Kitchen</a></li>
                      <li><a href="choose-my-plate.php">Choose My Plate</a></li>
                   </ul>
                </div>
+               <div class="clear-both"></div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

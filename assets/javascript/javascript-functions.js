@@ -3,6 +3,7 @@
 /* Dropdown navigation menu code */
 function toggleShowDropdownContent(){
      document.getElementById("navDropdown").classList.toggle("show-dropdown-content");	
+	 document.getElementById("dropButton").classList.toggle("show-drop-button");
 }
 
 window.onclick=function(e){
@@ -29,6 +30,7 @@ function showModal(){
 	subscribeModal.style.display="block";
 	subscribeModalBackdrop.style.display="block";
 	subscribeModalBackdrop.style.opacity="0.7";	
+	document.getElementById("userFirstNameSubscribe").focus();
 }
 
 function hideModal() {
@@ -36,6 +38,11 @@ function hideModal() {
 	subscribeModalBackdrop.style.display="none";
 	subscribeModalBackdrop.style.opacity="0";
 }
+
+function setEmailText(theText) {
+	document.getElementById("userEmailSubscribe").value=theText;
+}
+
 
 var subscribeButton=document.getElementById("subscribeButton");
 var subscribeModal=document.getElementById("subscribeModal");
@@ -171,7 +178,7 @@ function validateModalForm(){
 		document.getElementById("clientSideValidationFeedback").innerHTML="Please fill all required fields in the correct format.";
 		validForm=false;
 	
-	}else if (validForm){
+	} else if (validForm){
 		document.getElementById("clientSideValidationFeedback").innerHTML="Processing";
 	}
 	

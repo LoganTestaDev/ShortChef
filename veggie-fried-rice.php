@@ -19,46 +19,44 @@
          <?php include 'assets/includePHP/navbar-components.php'; ?>
          <?php include 'assets/includePHP/header-components.php'; ?>
          <div id="heroImageContainer">
-            <div class="inner-body-wrapper">
-               <div id="heroImageText">
-                  <h2>Recipes</h2>
-               </div>
-            </div>
-         </div>
-         <div class="breadcrumbs inner-body-wrapper">
-            <ul class="breadcrumbs-nav">
-               <li><a href="index.php">Short Chef</a></li>
-               <li><a href="recipes-short-chef.php">Recipes</a></li>
-               <li><a href="veggie-fried-rice.php">Veggie Fried Rice</a></li>
-            </ul>
          </div>
          <div class="content-container inner-body-wrapper">
             <div class="content-row content-row-pad">
+               <div class="content-med-12">
+                  <div class="page-header-container">
+                     <h1 class="row-one">Recipes from Short Chef</h1>
+                     <h1 class="row-two">Veggie Fried Rice</h1>
+                  </div>
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs-nav">
+                        <li><a href="index.php">Short Chef</a></li>
+                        <li><a href="recipes-short-chef.php">Recipes</a></li>
+                        <li><a href="veggie-fried-rice.php">Veggie Fried Rice</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear-both"></div>
+            </div>
+            <div class="content-row content-row-pad">
                <div class="ingredients-content">
-                  <h3 class="page-sub-header row-one">Recipes from Short Chef</h3>
-                  <h3 class="page-sub-header major-subheading row-two">Veggie Fried Rice</h3>
                   <div class="subpage-content">
-                     <div class="content-lar-5 left-col">
-                        <div class="supporting-photo-container veggie-fried-rice"></div>
+                     <div class="content-med-8 left-col">
+                        <div class="supporting-photo-container recipe-photo veggie-fried-rice"></div>
                      </div>
-                     <div class="content-lar-8 right-col">
+                     <div class="content-med-5 right-col">
                         <div class="subheader-themed-container ingredients">
-                           <h3 class="major-subheading">Ingredients</h3>
+                           <h2 class="major-subheading">Ingredients</h2>
                         </div>
                         <div class="ingredients-container">
                            <div class="ingredients-sub-container">
                               <div class="ingredients-inner-sub-container">
-                                 <div class="content-med-6 ingredients-list-left">
-                                    <ul class="ingredients-list">
+                                 <div class="ingredients-list">
+                                    <ul>
                                        <li>2 Eggs, lightly beaten</li>
                                        <li>1 1&frasl;2 teaspoons peanut oil or vegetable oil</li>
                                        <li>1 cup cold cooked rice</li>
                                        <li>1&frasl;2 cup carrots strings</li>
                                        <li>1&frasl;4 cup kernel corn</li>
-                                    </ul>
-                                 </div>
-                                 <div class="content-med-6 ingredients-list-right">
-                                    <ul class="ingredients-list">
                                        <li>1&frasl;3 cup diced onion</li>
                                        <li>1 tablespoon of chopped garlic</li>
                                        <li>1 dash of white pepper</li>
@@ -66,7 +64,6 @@
                                        <li>1 1&frasl;2 teaspoons soy sauce</li>
                                     </ul>
                                  </div>
-                                 <div class="clear-both"></div>
                               </div>
                            </div>
                         </div>
@@ -74,89 +71,35 @@
                      <div class="clear-both"></div>
                   </div>
                </div>
-            </div>
-         </div>
-         <div class="instructions-content spiral-background">
-            <div class="inner-body-wrapper">
-               <div class="content-med-2">&nbsp;</div>
-               <div class="content-med-8">
-                  <h3 class="major-subheading">Instructions</h3>
-                  <div class="instructions-container">
-                     <div class="instructions-sub-container">
-                        <div class="instructions-inner-sub-container">
-                           <div class="content-med-6 step-container">
-                              <div class="step-number">Step One</div>
-                           </div>
-                           <div class="content-med-12">
-                              <div class="instructions-item">In a small skillet, cook and stir eggs in oil over medium heat until eggs are completely scrambled.</div>
-                           </div>
-                           <div class="clear-both"></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="instructions-container">
-                     <div class="instructions-sub-container">
-                        <div class="instructions-inner-sub-container">
-                           <div class="content-med-6 step-container">
-                              <div class="step-number">Step Two</div>
-                           </div>
-                           <div class="content-med-12">
-                              <div class="instructions-item">Remove and set aside. In same skillet, heat 1 tablespoon of oil.</div>
-                           </div>
-                           <div class="clear-both"></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="instructions-container">
-                     <div class="instructions-sub-container">
-                        <div class="instructions-inner-sub-container">
-                           <div class="content-med-6 step-container">
-                              <div class="step-number">Step Three</div>
-                           </div>
-                           <div class="content-med-12">
-                              <div class="instructions-item">Add garlic and onion and cook for two minutes, add cooked rice, carrots and corn.</div>
-                           </div>
-                           <div class="clear-both"></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="instructions-container">
-                     <div class="instructions-sub-container">
-                        <div class="instructions-inner-sub-container">
-                           <div class="content-med-6 step-container">
-                              <div class="step-number">Step Four</div>
-                           </div>
-                           <div class="content-med-12">
-                              <div class="instructions-item">Season with white pepper. Add cooked eggs, stir rice for a few minutes then add soy sauce.</div>
-                           </div>
-                           <div class="clear-both"></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="instructions-container">
-                     <div class="instructions-sub-container">
-                        <div class="instructions-inner-sub-container">
-                           <div class="content-med-6 step-container">
-                              <div class="step-number">Step Five</div>
-                           </div>
-                           <div class="content-med-12">
-                              <div class="instructions-item">Toss until evenly colored. Top with Bean Sprouts and enjoy!</div>
-                           </div>
-                           <div class="clear-both"></div>
-                        </div>
-                     </div>
-                  </div>
+               <div class="subheader-themed-container instructions">
+                  <h2 class="major-subheading">Instructions</h2>
+               </div>
+               <div class="instructions-content">
+                  <h4>Step 1:</h4>
+                  <p>In a small skillet, cook and stir eggs in oil over medium heat until eggs are completely scrambled.</p>
+                  <h4>Step 2:</h4>
+                  <p>Remove and set aside. In same skillet, heat 1 tablespoon of oil.</p>
+                  <h4>Step 3:</h4>
+                  <p>Add garlic and onion and cook for two minutes, add cooked rice, carrots and corn.</p>
+                  <h4>Step 4:</h4>
+                  <p>Season with white pepper. Add cooked eggs, stir rice for a few minutes then add soy sauce.</p>
+                  <h4>Step 5:</h4>
+                  <p>Toss until evenly colored. Top with Bean Sprouts and enjoy!</p>
                   <div class="subpage-content-closing-container">
                      <p>Enjoy!</p>
                   </div>
                </div>
-               <div class="content-med-2">&nbsp;</div>
-               <div class="clear-both"></div>
+               <div class="see-more justify-center">
+                  <div class="see-more-content">
+                     <p><a href="recipes-short-chef.php">View More</a></p>
+                  </div>
+               </div>
             </div>
          </div>
-         <?php include 'assets/includePHP/events-components.php'; ?>
-         <?php include 'assets/includePHP/footer-components.php'; ?>
-         <?php include 'assets/includePHP/modal-components.php'; ?>
+      </div>
+      <?php include 'assets/includePHP/events-components.php'; ?>
+      <?php include 'assets/includePHP/footer-components.php'; ?>
+      <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>

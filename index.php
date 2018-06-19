@@ -21,14 +21,26 @@
          <div id="heroImageContainer" class="index-hero-image-background showBottomBoundary">
             <div class="inner-body-wrapper">
                <div id="heroImageText" class="heroImageTextIndex">
-                  <h2>Helping Our Kids</h2>
-                  <h2>to Have a</h2>
-                  <h2>Healthier Future!</h2>
-                  <h3>Hands on Kids' Nutrition</h3>
+                  <h1>Helping Our Kids</h1>
+                  <h1 class="header-alternate">to Have a</h1>
+                  <h1>Healthier Future!</h1>
+                  <h2>Hands on Kids' Nutrition</h2>
                   <div class="learn-more-wrapper">
                      <a href="about-short-chef.php">
                         <p class="strong">Learn More</p>
                      </a>
+                  </div>
+               </div>
+               <div class="sign-up-container">
+                  <div class="sign-up-inner-container">
+                     <div class="sign-up-text">
+                        <h3>Subscribe</h3>
+                        <p>to our mailing list</p>
+                     </div>
+					 <input id="signUpText" type="email" placeholder="Email">
+                     <div class="subscribe-button-container">
+                        <button id="signUpButton" class="subscribe-button">Subscribe</button>
+                     </div>
                   </div>
                </div>
             </div>
@@ -93,7 +105,9 @@
                <div class="content-med-4 hidden-item choose-my-plate">
                   <div class="hidden-text-container">
                      <div class="hidden-text">
-                        <p>Before you eat, think about what goes on your plate or in your cup or bowl.</p>
+                        <p>Before you eat, think about what goes on your plate or in your cup or bowl.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.
+						Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.  Loreum ipsum dolor.
+						Loreum ipsum dolor.  Enjoy!</p>
                      </div>
                      <div class="read-more">
                         <div class="read-more-circle"></div>
@@ -122,7 +136,7 @@
                      </div>
                   </div>
                </div>
-			   <div class="clear-both"></div>
+               <div class="clear-both"></div>
             </div>
          </div>
          <?php include 'assets/includePHP/events-components.php'; ?>
@@ -141,7 +155,7 @@
                            <div class="recipe-info recipe-info-1 justify-center">
                               <div class="recipe-info-item">
                                  <a href="short-chef-march-2013-interview.php">
-                                    <h4>Strawberry and Banana Cream Sandwich</h4>
+                                    <h3>Strawberry and Banana Cream Sandwich</h3>
                                  </a>
                                  <p class="recipe-date">Nov 21, 2018</p>
                               </div>
@@ -157,7 +171,7 @@
                         <div class="recipe-info recipe-info-2 justify-center">
                            <div class="recipe-info-item">
                               <a href="pbj-on-a-roll.php">
-                                 <h4>PB&J On a Roll</h4>
+                                 <h3>PB&J On a Roll</h3>
                               </a>
                               <p class="recipe-date">Nov 21, 2018</p>
                            </div>
@@ -179,7 +193,7 @@
                            <div class="recipe-info recipe-info-3 justify-center">
                               <div class="recipe-info-item">
                                  <a href="checkerboard-salad.php">
-                                    <h4>Checkerboard Salad</h4>
+                                    <h3>Checkerboard Salad</h3>
                                  </a>
                                  <p class="recipe-date">Nov 20, 2018</p>
                               </div>
@@ -208,6 +222,7 @@
                   <div class="content-med-12">
                      <div class="short-thoughts-background featured-photo"></div>
                   </div>
+				  <div class="clear-both"></div>
                </div>
                <div class="content-med-7 content-lar-6 right-col">
                   <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
@@ -280,17 +295,18 @@
                      </div>
                   </div>
                </div>
+			   <div class="clear-both"></div>
             </div>
          </div>
          <div class="kitchen-utensil kitchen-utensil-1"></div>
          <div class="kitchen-utensil kitchen-utensil-2"></div>
          <div class="kitchen-utensil kitchen-utensil-3"></div>
-         <div id="coordinates"></div>
          <?php include 'assets/includePHP/footer-components.php'; ?>
          <?php include 'assets/includePHP/modal-components.php'; ?>
       </div>
    </body>
    <script type="text/javascript" src="assets/javascript/javascript-functions.js"></script>
+   <script type="text/javascript" src="assets/javascript/sign-up-functions.js"></script>
    <script type="text/javascript" src="assets/javascript/featured-content-functions.js"></script>
    <script type="text/javascript" src="assets/javascript/show-hide-elements.js"></script>
 </html>
