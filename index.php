@@ -248,6 +248,7 @@
                            </div>
                         </div>
                      </div>
+					 <div class="clear-both"></div>
                   </div>
                   <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
                      <div class="content-sml-6 content-lar-5">
@@ -271,6 +272,7 @@
                            </div>
                         </div>
                      </div>
+					 <div class="clear-both"></div>
                   </div>
                   <div class="short-thoughts-news-item-wrapper content-row content-row-pad">
                      <div class="content-sml-6 content-lar-5">
@@ -294,6 +296,7 @@
                            </div>
                         </div>
                      </div>
+					 <div class="clear-both"></div>
                   </div>
                </div>
                <div class="clear-both"></div>
